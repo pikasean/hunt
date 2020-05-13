@@ -6,11 +6,11 @@ A common source of errors is not having the proper CSS/JS file in the HTML page.
 Please do not touch CSS/JS files in your commits, unless you have been tasked to do so.
 
 In general, there are 5 types of pages:
-- [Main pages and Map](https://github.com/pikasean/hunt/new/master?readme=1#main-pages-and-map)
-- [Faculty pages which will link to puzzles](https://github.com/pikasean/hunt/new/master?readme=1#faculty-pages-which-link-to-puzzles)
-- [Puzzle pages](https://github.com/pikasean/hunt/new/master?readme=1#puzzle-pages)
-- [Metapuzzle pages](https://github.com/pikasean/hunt/new/master?readme=1#metapuzzle-pages)
-- [Solutions](https://github.com/pikasean/hunt/new/master?readme=1#solutions)
+- [Main pages and Map](https://github.com/pikasean/hunt#main-pages-and-map)
+- [Faculty pages which will link to puzzles](https://github.com/pikasean/hunt#faculty-pages-which-link-to-puzzles)
+- [Puzzle pages](https://github.com/pikasean/hunt#puzzle-pages)
+- [Metapuzzle pages](https://github.com/pikasean/hunt#metapuzzle-pages)
+- [Solutions](https://github.com/pikasean/hunt#solutions)
 
 There are 5 JS files used throughout the site:
 - bootstrap.min
