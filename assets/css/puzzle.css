@@ -1,0 +1,153 @@
+@font-face{
+    font-family: MetallophileSp8-Medium;
+    font-style: normal;
+    font-weight: normal;
+    src: url('./../../fonts/Metallophile%20Sp8%20Medium.woff')
+}
+
+body {
+    background-color: #d3d3d3
+}
+
+@media print {
+    .overall-layout-body,.puzzle-container,body {
+        display: block
+    }
+}
+
+.puzzle-container {
+    margin: 30px auto;
+    padding: 30px 60px;
+    background-color: #fff;
+    box-sizing: border-box;
+    width: 1020px;
+    font-size: 22px;
+    box-shadow: 0 0 10px #000
+}
+
+@media print {
+    .puzzle-container {
+        width: 920px;
+        border: 0;
+        box-shadow: none
+    }
+}
+
+.puzzle-container span.problem-badge img.problem-badge-image {
+    height: 22px;
+    vertical-align: text-top
+}
+
+.puzzle-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row
+}
+
+.puzzle-header .header-textual-data .town-name img {
+    max-width: 400px;
+    max-height: 150px
+}
+
+@media print {
+    .puzzle-header .header-anchor-graphic,.puzzle-header .header-textual-data .town-name {
+        display: none
+    }
+}
+
+.name-container {
+    width: 100%;
+    min-height: 80px;
+    -webkit-box-orient: horizontal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.name-container,.name-items {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal
+}
+
+.name-items {
+    -webkit-box-orient: vertical;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    justify-content: space-around
+}
+
+.theme-text {
+    margin: 5px 10px 10px;
+    font-size: 13px;
+    font-style: italic
+}
+
+.title-text {
+    font-size: 60px;
+    font-family: MetallophileSp8-Medium;
+    line-height: .9
+}
+
+.puzzle {
+    width: auto;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1
+}
+
+@media print {
+    .puzzle {
+        margin-top: 10px;
+        padding: 0
+    }
+}
+
+.solution.last {
+    margin-bottom: 44px
+}
+
+#byline {
+    margin: 44px 0 0;
+    font-family: MetallophileSp8-Medium;
+    font-size: 26px
+}
+
+.flavor {
+    font-style: italic;
+    margin: 44px 0
+}
+
+.call-to-action {
+    font-weight: 700;
+    margin-top: 1em;
+    margin-bottom: 2em
+}
+
+.puzzle-reward-solution-label,.puzzle-solution {
+    font-family: MetallophileSp8-Medium;
+    font-size: 26px
+}
+
+.puzzle-reward-solution-label a,.puzzle-solution a {
+    text-decoration: none;
+    color: #000
+}
+
+.puzzle-solution.spaced {
+    letter-spacing: .05em
+}

@@ -1,0 +1,57 @@
+@font-face{
+    font-family: MetallophileSp8-Medium;
+    font-style: normal;
+    font-weight: normal;
+    src: url(./../fonts/Metallophile%20Sp8%20Medium.woff)
+}
+@font-face{
+    font-family: CrimsonText-Regular;
+    font-style: normal;
+    font-weight: normal;
+    src: url(./../fonts/CrimsonText-Regular.woff)
+}
+
+@media screen{body{background-color:#92959f}}
+@media screen{.overall-layout-body{width:1200px;margin:0 auto}}
+.title-text{
+    font-size:66px;
+    line-height:72px;
+    margin:15px auto 30px;
+    text-align:center;
+    font-family:MetallophileSp8-Medium,sans-serif}
+
+#main-page-content{
+    font-family:CrimsonText-Regular,serif;
+    font-size:22px;
+    line-height:29px;
+    color:#000;
+    box-shadow:0 0 10px #000}
+    
+#main-page-content a{
+    color:#000;
+    text-decoration:none;
+    border-bottom:1px dotted #262626}
+    
+#main-page-content a:hover{
+    background-color:#d8d8d8;
+    text-decoration:none;
+    border-bottom:1px solid #262626}
+    
+#main-page-content p,#main-page-content ul{
+    margin-top:8px;margin-bottom:8px}
+    
+#main-page-content ul{
+    list-style-type:square}
+    
+#main-page-content li{
+    margin-left:40px;
+    margin-bottom:4px}
+    
+@media print{
+    #main-page-content{box-shadow:none}}
+    
+@media screen{#main-page-content{width:1020px;margin:30px auto;padding:30px 60px;box-sizing:border-box;background-color:#fff}}
+
+#main-page-content .support-header{font-size:32px;line-height:28px;font-family:MetallophileSp8-Medium,sans-serif;margin-bottom:8px}
+
+#main-page-content .support-section+.support-section{margin-top:20px;margin-bottom:20px}
