@@ -1,5 +1,5 @@
 # hunt
-a hunt for ufo15. Inspired by [this hunt](https://www.mit.edu/~puzzle/2019/full.html).
+a hunt for ufo15.
 
 ## HTML, CSS, and JS
 A common source of errors is not having the proper CSS/JS file in the HTML page. Hence, we will detail the required files here.
