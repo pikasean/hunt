@@ -2,12 +2,14 @@
 
 <html lang="en">
   <head>
-    <title>Business School/Faculty of Science</title>  
+    <title>12 Pictures</title>  
 
     <!-- Meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=1200, initial-scale=0">
     <meta name="google" content="notranslate">
+    <!-- Block indexing -->
+    <meta name="robots" content="noindex">
       
     <!-- Sources -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>  
@@ -21,7 +23,7 @@
     <link rel="stylesheet" href="../assets/css/common.css">
     <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
     <link rel="stylesheet" href="../assets/css/puzzle.css">
-    <link rel="stylesheet" href="../assets/css/metapuzzle.css">
+    <link rel="stylesheet" href="../assets/css/fos_puzzle_page.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">  
     
     <!-- Icons and Styles -->
@@ -56,10 +58,10 @@
           line-height: 29px;
       }
       body{
-        background-image: url("../assets/images/backgrounds/general.jpg");
+        background-image: url("../assets/images/backgrounds/fos.jpg");
       }
     </style>
-  <!-- Fill in appropriate puzzle content styles -->
+    <!-- Fill in appropriate puzzle content styles -->
   </head>
 
   <body>
@@ -68,7 +70,7 @@
         <div class="header-links">
           <div class="header-link"><a href="../map.html">Map</a></div>
           <div class="header-link header-dropdown">
-            <div class="header-dropdown-title"><a href="biz_fos.html#"> Useful Links <span class="fas fa-caret-down"></span></a></div>
+            <div class="header-dropdown-title"><a href="12_pictures.html#"> Useful Links <span class="fas fa-caret-down"></span></a></div>
             <div class="dropdown-content-wrapper">
               <div class="dropdown-link"><a href="../guide.html">Guide</a></div>
               <div class="dropdown-link"><a href="../puzzle.html">List of Puzzles</a></div>
@@ -83,11 +85,11 @@
 
 
         <div class="header-links">
-            <div id="check_answer" class="header-link"><a href="biz_fos.html#" data-toggle="modal" data-target="#checkAnswerModal">Check Answer</a></div>
-            <div id="submit" class="header-link"><a href="../solutions/biz_fos.html">Solution</a></div>
+            
+            <div id="submit" class="header-link"><a href="../puzzles/12_pictures.html">Back to Puzzle</a></div>
           
         
-          <div class="modal fade" id="checkAnswerModal" tabindex="-1" role="dialog" aria-labelledby="checkAnswerModalLabel" data-puzzle-id="biz_fos" >
+          <div class="modal fade" id="checkAnswerModal" tabindex="-1" role="dialog" aria-labelledby="checkAnswerModalLabel" data-puzzle-id="12_pictures" >
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -95,7 +97,7 @@
                   <span class="modal-title" id="checkAnswerModalLabel">Check Answer</span>
                 </div>
                 <div class="modal-body">
-                  <form id="checkAnswerForm" action="biz_fos.html#">
+                  <form id="checkAnswerForm" action="12_pictures.html#">
                     <input type="text" placeholder="Enter answer here" /><br>
                     <button type="submit">Check</button>
                   </form>
@@ -114,39 +116,61 @@
     <div class="overall-layout-body">
     
           
-        <div class="puzzle-container unlocked">
+        <div class="puzzle-container solved">
             <div id="header" class="puzzle-header">
 
-                <div class="name-container">
-                    <div class="name-items">
-                        <div class="problem-graphic-container">
-                            <img id="problem-graphic" src="../assets/images/lamppost.png"/></div>
-                        </div>
-                        <div class="title-text">
-                            <div class="problem-holiday"><a href="../faculties/biz.html">Business School</a></div>
-                            <div class="problem-holiday"><a href="../faculties/fos.html">Faculty of Science</a></div>
-                        </div>
+                <div class="header-anchor-graphic">
+                    <div class="town-building">
+                      <a href="../faculties/fos.html">
+                        <img src="../assets/images/faculties/fos_building.png" />
+                      </a>
                     </div>
-                </div>
+                  </div>
+                  <div class="header-textual-data">
+                    <div class="town-name">
+                      <a href="../faculties/fos.html">
+                        <img src="../assets/images/faculties/fos_name.png" />
+                      </a>
+                    </div>
+                    <div class="name-container">
+                      <div class="name-items">
+                        <div class="title-text">
+                          12 Photos
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+            </div>
         
 
 
         <div id="puzzle" class="puzzle">
+            
 
-            <div id="flavor" class="flavor">
-                Cipher blablabla
-            </div>
+            <div id="solution" class="solution last">
+                <span class="puzzle-reward-solution-label">Answer:</span>
+                <span class="puzzle-solution spaced">NIL</span>
+                  <br/>
+                  <span class="puzzle-reward-solution-label">Metapuzzle:</span>
+                    
+                    <span class="puzzle-solution">
+                        <a href="../metapuzzles/biz_fos.html">Business School/Faculty of Science <span class="problem-badge"><img class="problem-badge-image" src="../assets/problems/clean_icons/arbor_day_pi_day.svg" /></span></a>
+                    </span>
+                    
+                  
+              </div>
+
+
 
             <div class="puzzle-content">
 
-
+                <!-- Solution goes here -->
             </div>
 
 
-            <div id="call-to-action" class="call-to-action">
-                To solve this metapuzzle, you will need answers from Business School and the Faculty of Science.
-                No answer is used more than one metapuzzle.
-            </div>
+            
 
         </div>
 
