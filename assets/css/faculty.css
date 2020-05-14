@@ -1,0 +1,129 @@
+@font-face{
+    font-family: MetallophileSp8-Medium;
+    font-style: normal;
+    font-weight: normal;
+    src: url(./../fonts/Metallophile%20Sp8%20Medium.woff)
+}
+
+#town-container {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto 12px
+}
+
+#town-container #header {
+    text-align: center
+}
+
+img#town-image {
+    width: 1100px;
+    max-width: 92%;
+    margin: 50px auto 30px
+}
+
+div#puzzle-list {
+    display: block;
+    width: 1100px;
+    max-width: 92%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 12px
+}
+
+div#puzzle-list div.puzzle-entry {
+    text-align: center;
+    font-size: 36px;
+    font-family: MetallophileSp8-Medium;
+    line-height: 1em;
+    margin-bottom: .5em
+}
+
+div#puzzle-list div.puzzle-entry div.puzzle-solution {
+    font-size: 22px;
+    line-height: 22px
+}
+
+div#puzzle-list div.puzzle-entry div.puzzle-solution.spaced {
+    letter-spacing: .05em
+}
+
+div#puzzle-list div.puzzle-entry span.problem-badge img.problem-badge-image {
+    height: 22px
+}
+
+div#puzzle-list a {
+    color: #000;
+    text-decoration: none
+}
+
+div#puzzle-list a:hover {
+    text-decoration: underline
+}
+
+div#puzzle-list {
+    -webkit-column-width: 500px;
+    column-width: 500px
+}
+
+div#problem-list-container {
+    font-family: MetallophileSp8-Medium;
+    font-size: 36px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    border: 1px solid #ccc;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 1100px;
+    max-width: 92%;
+    margin: 1em auto;
+    background-color: hsla(0,0%,100%,.5)
+}
+
+div#problem-list-container>div {
+    margin-top: .5em;
+    margin-bottom: .5em
+}
+
+div.lamppost-container {
+    margin: 18px
+}
+
+div.lamppost-container img.lamppost-image {
+    height: 144px
+}
+
+div#problem-list {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 92%
+}
+
+div#problem-list div {
+    max-width: 100%
+}
+
+div#problem-list a {
+    text-decoration: none;
+    color: #000
+}
+
+div#problem-list a:hover {
+    text-decoration: underline
+}
+
+div#problem-list div.problem-entries div.problem-entry span.problem-badge img.problem-badge-image {
+    padding-left: 12px;
+    height: 22px
+}

@@ -59,7 +59,8 @@
 
 .problem-holiday {
     width: 50%;
-    font-family: MetallophileSp8-Medium
+    font-family: MetallophileSp8-Medium;
+    font-size:40px
 }
 
 .problem-holiday:first-child {
