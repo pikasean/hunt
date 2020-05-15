@@ -32,6 +32,7 @@ There are 10 CSS files used throughout the site:
 - faculty (specific)
 
 These are the requirements:
+(Note that each file now has a CSS dedicated for its bg, so it is easy to change bg images at once.)
 ### Main pages and Map
 JS:
 - bootstrap.min
