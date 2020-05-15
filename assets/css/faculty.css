@@ -1,8 +1,22 @@
 @font-face{
+    font-family: BlackBeard;
+    font-style: normal;
+    font-weight: normal;
+    src: url(./../fonts/BlackBeard.woff)
+}
+
+@font-face{
     font-family: MetallophileSp8-Medium;
     font-style: normal;
     font-weight: normal;
     src: url(./../fonts/Metallophile%20Sp8%20Medium.woff)
+}
+
+@font-face{
+    font-family: ValeriaBoldGrunge;
+    font-style: normal;
+    font-weight: normal;
+    src: url(./../fonts/ValeriaBoldGrunge.woff)
 }
 
 #town-container {
@@ -33,7 +47,7 @@ div#puzzle-list {
 div#puzzle-list div.puzzle-entry {
     text-align: center;
     font-size: 36px;
-    font-family: MetallophileSp8-Medium;
+    font-family: BlackBeard;
     line-height: 1em;
     margin-bottom: .5em
 }
@@ -66,7 +80,7 @@ div#puzzle-list {
 }
 
 div#problem-list-container {
-    font-family: MetallophileSp8-Medium;
+    font-family: BlackBeard;
     font-size: 36px;
     display: -webkit-box;
     display: -ms-flexbox;

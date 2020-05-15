@@ -1,9 +1,24 @@
 @font-face{
+    font-family: BlackBeard;
+    font-style: normal;
+    font-weight: normal;
+    src: url(./../fonts/BlackBeard.woff)
+}
+
+@font-face{
     font-family: MetallophileSp8-Medium;
     font-style: normal;
     font-weight: normal;
     src: url(./../fonts/Metallophile%20Sp8%20Medium.woff)
 }
+
+@font-face{
+    font-family: ValeriaBoldGrunge;
+    font-style: normal;
+    font-weight: normal;
+    src: url(./../fonts/ValeriaBoldGrunge.woff)
+}
+
 @font-face{
     font-family: CrimsonText-Regular;
     font-style: normal;
@@ -18,7 +33,7 @@
     line-height:72px;
     margin:15px auto 30px;
     text-align:center;
-    font-family:MetallophileSp8-Medium,sans-serif}
+    font-family:BlackBeard,sans-serif}
 
 #main-page-content{
     font-family:CrimsonText-Regular,serif;
@@ -52,6 +67,6 @@
     
 @media screen{#main-page-content{width:1020px;margin:30px auto;padding:30px 60px;box-sizing:border-box;background-color:#fff}}
 
-#main-page-content .support-header{font-size:32px;line-height:28px;font-family:MetallophileSp8-Medium,sans-serif;margin-bottom:8px}
+#main-page-content .support-header{font-size:32px;line-height:28px;font-family:BlackBeard,sans-serif;margin-bottom:8px}
 
 #main-page-content .support-section+.support-section{margin-top:20px;margin-bottom:20px}
