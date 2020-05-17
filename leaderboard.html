@@ -14,6 +14,19 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/hunt.js"></script>
     <script src="assets/js/jquery-ui.min.js"></script>
+    <script>
+      fetch('http://localhost:3000/hunt/leaderboard')
+        .then(response => response.json()).then(x => {console.log(x); return x})
+        .then(data => {
+          let txt = "<table class='table'><tr><th>Name</th><th>Score</th><th>Ranking</th></tr>"
+          for (let og of data) {
+            txt += `<tr><td>${og.Name}</td><td>${og.Score}</td><td>${og.Ranking}</td></tr>`;
+          }
+          txt += "</table>"
+          console.log(txt);
+          document.getElementById("demo").innerHTML = txt;
+        });
+    </script>
     
     
     <link rel="stylesheet" href="assets/css/bootstrap-reduced.css">
@@ -44,6 +57,17 @@
           font-family: CrimsonText-Regular, serif;
           font-size: 15px;
           text-align: center;
+      }
+      table {
+        border: 2px solid black;
+        border-collapse: collapse;
+        width: 100%;
+        table-layout: fixed;
+      }
+      th, td {
+        border: 1px solid black;
+        padding: 12px;
+        text-align: center;
       }
       #header-change-contact-info .modal-header-text {
           font-size: 30px;
@@ -80,9 +104,9 @@
     <div class="overall-layout-body ">
     <div id="main-page-content">
       <div class="title-text">Leaderboard</div>
-          
-      
-<p>This page is a work in progress.</p>
+      <div id = 'demo'>
+      </div>
+    </div>
     </div>
   </body>
 </html>
