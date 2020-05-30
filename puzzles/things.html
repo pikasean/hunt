@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Things</title>  
+
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1200, initial-scale=0">
+    <meta name="google" content="notranslate">
+      
+    <!-- Sources -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>  
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/hunt.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/solutions.js"></script>    
+    
+    <link rel="stylesheet" href="../assets/css/bootstrap-reduced.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/puzzle.css">
+    <link rel="stylesheet" href="../assets/css/yst_puzzle_page.css">
+    <link rel="stylesheet" href="../assets/css/backgrounds/yst.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">  
+    
+    <!-- Icons and Styles -->
+    <!-- Generics -->
+    <link rel="icon" href="../assets/icons/favicon-32.png" sizes="32x32" />
+    <link rel="icon" href="../assets/icons/favicon-96.png" sizes="96x96" />
+    <link rel="icon" href="../assets/icons/favicon-128.png" sizes="128x128" />
+    <link rel="icon" href="../assets/icons/favicon-192.png" sizes="192x192" />
+    <!-- Android -->
+    <link rel="shortcut icon" href="../assets/icons/favicon-196.png" sizes="196x196" />
+    <!-- iOS -->
+    <link rel="apple-touch-icon" href="../assets/icons/favicon-120.png" sizes="120x120" />
+    <link rel="apple-touch-icon" href="../assets/icons/favicon-152.png" sizes="152x152" />
+    <link rel="apple-touch-icon" href="../assets/icons/favicon-167.png" sizes="167x167" />
+    <link rel="apple-touch-icon" href="../assets/icons/favicon-180.png" sizes="180x180" />
+    <!-- iOS icon title -->
+    <meta name="apple-mobile-web-app-title" content="UFO15" />
+
+    <style>
+      .tooltip-title {
+          font-family: CrimsonText-Regular, serif;
+          font-size: 15px;
+          text-align: center;
+      }
+      #header-change-contact-info .modal-header-text {
+          font-size: 30px;
+          font-family: BlackBeard,sans-serif;
+      }
+      #header-change-contact-info input {
+          font-family: CrimsonText-Regular,serif;
+          font-size: 22px;
+          line-height: 29px;
+      }
+    </style>
+    <!-- Fill in appropriate puzzle content styles -->
+    <style>
+      .puzzle-content div {
+        margin: 1em 0;
+        page-break-inside: avoid;
+      }
+      
+      .puzzle-content .diagram {
+        width: 898px;
+        height: 898px;
+        margin: 1em auto;
+        display: block;
+        border: 1px solid black;
+      }
+      .puzzle-content svg {
+        display: inline;
+        width: inherit;
+        min-width: inherit;
+        max-width: inherit;
+        height: inherit;
+        min-height: inherit;
+        max-height: inherit;
+      }
+      .puzzle-content circle, .puzzle-content ellipse { stroke: black; fill: white; stroke-width: 5px; }
+      .puzzle-content text {
+        text-anchor: middle;
+        fill: black;
+        font-weight: bold;
+        font-family: Helvetica, Arial, sans-serif;
+      }
+      .puzzle-content tspan { fill: red; }
+      .puzzle-content .t1 { font-size: 128px; }
+      .puzzle-content .t3 { font-size: 64px; }
+      .puzzle-content .t4 { font-size: 48px; }
+      .puzzle-content .t5 { font-size: 32px; }
+      .puzzle-content .t6 { font-size: 24px; }
+      .puzzle-content .none { fill: transparent; }
+    </style>
+  </head>
+
+  <body>
+    <div class="fixed-header">
+      <div class="fixed-header-inner">
+        <div class="header-links">
+          <div class="header-link"><a href="../map.html">Map</a></div>
+          <div class="header-link header-dropdown">
+            <div class="header-dropdown-title"><a href="things.html#"> Useful Links <span class="fas fa-caret-down"></span></a></div>
+            <div class="dropdown-content-wrapper">
+              <div class="dropdown-link"><a href="../guide.html">Guide</a></div>
+              <div class="dropdown-link"><a href="../puzzle.html">List of Puzzles</a></div>
+              <div class="dropdown-link"><a href="../errata.html">Errata</a></div>
+              <div class="dropdown-link"><a href="../faq.html">FAQs</a></div>
+              <div class="dropdown-link"><a href="../leaderboard.html">Leaderboard</a></div>
+              <div class="dropdown-link"><a href="../credits.html">Credits</a></div>  
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="header-links">
+            <div id="check_answer" class="header-link"><a href="things.html#" data-toggle="modal" data-target="#checkAnswerModal">Check Answer</a></div>
+            <div id="submit" class="header-link"><a href="../solutions/things.html">Solution</a></div>
+          
+        
+          <div class="modal fade" id="checkAnswerModal" tabindex="-1" role="dialog" aria-labelledby="checkAnswerModalLabel" data-puzzle-id="things" >
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <span class="modal-title" id="checkAnswerModalLabel">Check Answer</span>
+                </div>
+                <div class="modal-body">
+                  <form id="checkAnswerForm" action="things.html#">
+                    <input type="text" placeholder="Enter answer here" /><br>
+                    <button type="submit">Check</button>
+                  </form>
+                  <div id="checkAnswerResult">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+                </div>
+
+
+      </div>
+    </div>
+
+    <div class="overall-layout-body">
+    
+          
+        <div class="puzzle-container unlocked">
+            <div id="header" class="puzzle-header">
+
+                <div class="header-anchor-graphic">
+                    <div class="town-building">
+                      <a href="../faculties/yst.html">
+                        <img src="../assets/images/faculties/yst_building.png" />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="header-textual-data">
+                    <div class="town-name">
+                      <a href="../faculties/yst.html">
+                        <img src="../assets/images/faculties/yst_name.png" />
+                      </a>
+                    </div>
+                    <div class="name-container">
+                      <div class="name-items">
+                        <div class="title-text">
+                          Things
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+            </div>
+        
+
+
+        <div id="puzzle" class="puzzle">
+
+            <div id="flavor" class="flavor">
+                An old wizard is trying to remember the name of a song he liked in his youth. 
+                However, he only remembers certain things. 
+                Can you help him recall the name of this song?
+            </div>
+
+            <div class="puzzle-content">
+              <div class="diagram">
+                <svg id="song-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3000 3000" width="898px" height="898px" preserveAspectRatio="xMidYMid meet" >
+                  <circle cx="1500" cy="1500" r="1490" />
+                  <text x="1500" y="200" class="t1">THINGS</text>
+              
+                  <circle cx="1050" cy="800" r="550" class="none" />
+                  <text x="1050" y="340" class="t3">THINGS I</text>
+                  <text x="1000" y="400" class="t3">WANT YOU</text>
+                  <text x="950" y="460" class="t3">TO KNOW</text>
+              
+                  <circle cx="1650" cy="800" r="550" class="none" />
+                  <text x="1650" y="340" class="t3">THINGS</text>
+                  <text x="1650" y="400" class="t3">YOU ARE</text>
+              
+                  <circle cx="2200" cy="800" r="300" class="none" />
+                  <text x="2350" y="770" class="t3">THINGS</text>
+                  <text x="2350" y="830" class="t3">I AM</text>
+              
+                  <ellipse cx="1350" cy="650" rx="140" ry="80" />
+                  <text x="1350" y="650" class="t6">?? ????</text>
+              
+                  <ellipse cx="1350" cy="950" rx="140" ry="80" />
+                  <text x="1350" y="950" class="t6">??? ??? ??????</text>
+              
+                  <ellipse cx="800" cy="800" rx="240" ry="160" />
+                  <text x="800" y="810" class="t6">???? ???? ?????? ?? ??</text>
+              
+                  <ellipse cx="2050" cy="800" rx="140" ry="80" />
+                  <text x="2050" y="810" class="t6">??? ?????? ?????</text>
+              
+                  <circle cx="1500" cy="2050" r="520" />
+                  <text x="1500" y="1675" class="t3">THINGS THAT</text>
+                  <text x="1500" y="1735" class="t3">CAN BE SAID</text>
+                  <circle cx="1500" cy="2450" r="400" class="none" />
+                  <text x="1500" y="2700" class="t4">THINGS I NEVER WANT</text>
+                  <circle cx="1500" cy="2100" r="250" class="none" />
+                  <text x="1500" y="2000" class="t4">THINGS I SAY</text>
+                  <circle cx="1500" cy="2300" r="250" class="none" />
+                  <text x="1500" y="2425" class="t4">THINGS YOU SAY</text>
+              
+                  <ellipse cx="1500" cy="2200" rx="160" ry="80" />
+                  <text x="1500" y="2210" class="t6">? ???? ?? ???? ???</text>
+              
+                  <circle cx="450" cy="1600" r="400" class="none" />
+                  <text x="450" y="1300" class="t4">THINGS THAT</text>
+                  <text x="450" y="1360" class="t4">CAN BE SEEN</text>
+                  <circle cx="450" cy="1700" r="280" class="none" />
+                  <text x="450" y="1510" class="t5">THINGS I CAN SEE</text>
+                  <ellipse cx="450" cy="1750" rx="200" ry="120" />
+                  <text x="450" y="1760" class="t6">??'?? ??????? ?????</text>
+              
+                  <circle cx="2550" cy="1600" r="400" class="none" />
+                  <text x="2550" y="1300" class="t4">THINGS THAT</text>
+                  <text x="2550" y="1360" class="t4">CAN'T BE DONE</text>
+                  <circle cx="2550" cy="1700" r="280" class="none" />
+                  <text x="2550" y="1510" class="t5">THINGS I CAN'T DO</text>
+                  <ellipse cx="2550" cy="1750" rx="200" ry="120" />
+                  <text x="2550" y="1760" class="t6">????? ?? ???? ?????</text>
+              
+                  <circle cx="675" cy="2300" r="300" class="none" />
+                  <text x="675" y="2100" class="t5">THINGS THAT ARE</text>
+                  <text x="675" y="2140" class="t5">DOUBLE NEGATIVES</text>
+                  <ellipse cx="675" cy="2260" rx="200" ry="80" />
+                  <text x="675" y="2270" class="t6">?????????</text>
+                  <ellipse cx="675" cy="2430" rx="200" ry="80" />
+                  <text x="675" y="2440" class="t6">???????</text>
+              
+                  <circle cx="2325" cy="2300" r="300" class="none" />
+                  <text x="2325" y="2120" class="t5">THINGS I KNOW</text>
+                  <ellipse cx="2325" cy="2310" rx="200" ry="80" />
+                  <text x="2325" y="2320" class="t6">??'? ??? ????</text>
+                </svg>
+
+
+              </div>
+              <script src="../assets/puzzles/things/svg-pan-zoom.js"></script>
+              <script>
+                window.panZoomOne = svgPanZoom('#song-1', {
+                        zoomEnabled: true,
+                        controlIconsEnabled: true,
+                    mouseWheelZoomEnabled: false,
+                        fit: true,
+                        center: true
+                      });
+              </script>
+            </div>
+
+
+            
+
+        </div>
+
+
+        </div>
+      
+    </div>
+  </body>
+</html>
