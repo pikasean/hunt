@@ -126,11 +126,11 @@
     text-indent: -2em
 }
 
-#checkAnswerModal {
+#checkAnswerModal, #loginModal {
     color: #000
 }
 
-#checkAnswerModal #checkAnswerForm {
+#checkAnswerModal #checkAnswerForm, #loginModal #loginForm {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex
@@ -143,12 +143,13 @@
     margin-right: 8px
 }
 
-#checkAnswerModal #checkAnswerForm button,#checkAnswerModal #checkAnswerForm input {
+#checkAnswerModal #checkAnswerForm button, #checkAnswerModal #checkAnswerForm input,
+#loginModal #loginForm button, #loginModal #loginForm input {
     font-size: 24px;
     font-family: Century Supra,serif
 }
 
-#checkAnswerModal #checkAnswerResult {
+#checkAnswerModal #checkAnswerResult, #loginModal #loginResult {
     min-height: 40px;
     padding-top: 8px;
     text-align: center

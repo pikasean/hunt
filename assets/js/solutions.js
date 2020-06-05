@@ -20,6 +20,7 @@
     }
 
     if (submissionHashCode == answerHashCode) {
+      // call to API
       return { correct: true, message: null };
     }
 
