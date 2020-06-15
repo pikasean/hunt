@@ -1,6 +1,8 @@
 /// Retrieve token.
 // If token is present, we will render the submit page, else the login page.
 let authToken = () => localStorage.getItem('token');
+let groupName = () => localStorage.getItem('groupName');
+let puzzleName = () => window.location.href.split("/").slice(-1)[0].split(".")[0];
 
 /// Reset all input field.
 // Reset when press submit and close window.
@@ -13,15 +15,16 @@ function resetModal() {
 
 /// HTML for login
 function showLogin() {
+    let puzzle = puzzleName();
     const htmlLogin = `
         <div class="header-links">
           <div id="login" class="header-link">
-            <a href="12_pictures.html#" data-toggle="modal" data-target="#loginModal">Login</a>
+            <a href="${puzzle}.html#" data-toggle="modal" data-target="#loginModal">Login</a>
           </div>
 
 
           <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
-               data-puzzle-id="12_pictures">
+               data-puzzle-id="${puzzle}">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -30,7 +33,7 @@ function showLogin() {
                   <span class="modal-title" id="loginModalLabel">Enter your team name and password</span>
                 </div>
                 <div class="modal-body">
-                  <form id="loginForm" action="12_pictures.html#">
+                  <form id="loginForm" action="${puzzle}.html#">
                     <input type="text" placeholder="Username"/><br>
                     <input type="password" placeholder="Password"/><br>
                     <button type="submit">Login</button>
@@ -49,15 +52,19 @@ function showLogin() {
 }
 /// HTML for check answer
 function showSubmit() {
+    let puzzle = puzzleName();
+    let group = groupName();
+    let welcomeDescription = group === null ? 'Welcome!' : `Welcome, ${group}!`;
     const htmlSubmit = `
         <div class="header-links">
-          <div id="check_answer" class="header-link"><a href="12_pictures.html#" data-toggle="modal"
-                                                    data-target="#checkAnswerModal">Check Answer</a></div>
-          <div id="submit" class="header-link"><a href="../solutions/12_pictures.html">Solution</a></div>
-
+          <div id="welcome" class="header-link"><a>${welcomeDescription}</a></div>
+          <div id="check_answer" class="header-link"><a href="${puzzle}.html#" data-toggle="modal"
+                                                    data-target="#checkAnswerModal">Submit Answer</a></div>
+<!--          <div id="submit" class="header-link"><a href="../solutions/${puzzle}.html">Solution</a></div>-->
+          
 
           <div class="modal fade" id="checkAnswerModal" tabindex="-1" role="dialog" aria-labelledby="checkAnswerModalLabel"
-               data-puzzle-id="12_pictures">
+               data-puzzle-id="${puzzle}">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -66,7 +73,7 @@ function showSubmit() {
                   <span class="modal-title" id="checkAnswerModalLabel">Check Answer</span>
                 </div>
                 <div class="modal-body">
-                  <form id="checkAnswerForm" action="12_pictures.html#">
+                  <form id="checkAnswerForm" action="${puzzle}.html#">
                     <input type="text" placeholder="Enter answer here"/><br>
                     <button type="submit">Check</button>
                   </form>
