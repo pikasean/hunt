@@ -130,10 +130,23 @@
     color: #000
 }
 
-#checkAnswerModal #checkAnswerForm, #loginModal #loginForm {
+#checkAnswerModal #checkAnswerForm {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex
+}
+
+#loginModal #loginForm {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    flex-wrap: wrap;
+}
+
+#loginModal #loginForm input {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    margin-right: 8px;
+    margin-bottom: 8px;
 }
 
 #checkAnswerModal #checkAnswerForm input {

@@ -1,13 +1,13 @@
 function render() {
     clearBar();
-    if (authToken()) {
+    if (authToken() != null) {
         showSubmit();
-        document.querySelector('#loginForm')
-            .addEventListener('submit', loginCredentials);
+        document.querySelector('#checkAnswerForm')
+            .addEventListener('submit', submitAnswer);
     } else {
         showLogin();
         document.querySelector('#loginForm')
-            .addEventListener('submit', submitAnswer);
+            .addEventListener('submit', loginCredentials);
     }
 }
 
@@ -107,6 +107,9 @@ function loginCredentials(event) {
             'Content-Type': 'application/json'
         }
     };
+    console.log(data);
+    console.log(option);
+
     fetch('https://nusmsl.com/api/login', option)
         .then((res) => res.json())
         .then((data) => {
@@ -123,7 +126,7 @@ function submitAnswer(event) {
     let answer = document.querySelector("#checkAnswerForm input").value;
 
     // Check Answer from solution.js (handle afterwards)
-    if (true) { // if Pass
+    if (answer.isCorrect()) {
         let data = {
             token: authToken(),
             puzzleName: '12_pictures'
