@@ -1,7 +1,7 @@
 /// Retrieve token.
 // If token is present, we will render the submit page, else the login page.
-let authToken = () => localStorage.getItem('token');
-let groupName = () => localStorage.getItem('groupName');
+let authToken = () => sessionStorage.getItem('token');
+let groupName = () => sessionStorage.getItem('groupName');
 let puzzleName = () => window.location.href.split("/").slice(-1)[0].split(".")[0];
 
 /// Reset all input field.
@@ -57,10 +57,10 @@ function showSubmit() {
     let welcomeDescription = group === null ? 'Welcome!' : `Welcome, ${group}!`;
     const htmlSubmit = `
         <div class="header-links">
-          <div id="welcome" class="header-link"><a>${welcomeDescription}</a></div>
           <div id="check_answer" class="header-link"><a href="${puzzle}.html#" data-toggle="modal"
                                                     data-target="#checkAnswerModal">Submit Answer</a></div>
 <!--          <div id="submit" class="header-link"><a href="../solutions/${puzzle}.html">Solution</a></div>-->
+          <div id="welcome" class="header-link"><a href="../leaderboard.html" >${welcomeDescription}</a></div>
           
 
           <div class="modal fade" id="checkAnswerModal" tabindex="-1" role="dialog" aria-labelledby="checkAnswerModalLabel"
@@ -70,12 +70,12 @@ function showSubmit() {
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                   </button>
-                  <span class="modal-title" id="checkAnswerModalLabel">Check Answer</span>
+                  <span class="modal-title" id="checkAnswerModalLabel">Submit Answer</span>
                 </div>
                 <div class="modal-body">
                   <form id="checkAnswerForm" action="${puzzle}.html#">
                     <input type="text" placeholder="Enter answer here"/><br>
-                    <button type="submit">Check</button>
+                    <button type="submit">Submit</button>
                   </form>
                   <div id="checkAnswerResult">
                   </div>
@@ -127,11 +127,11 @@ function render() {
 }
 
 /// Submit event for login
-// Send login data to /api/login and receive a JWT token, which we store in localStorage.
+// Send login data to /api/login and receive a JWT token, which we store in sessionStorage.
 function loginCredentials(event) {
     event.preventDefault();
-    let teamName = document.querySelector("#loginForm input[type='text']").value;
-    let password = document.querySelector("#loginForm input[type='password']").value;
+    let teamName = $("#loginForm input[type='text']").val();
+    let password = $("#loginForm input[type='password']").val();
     let data = {
         name: teamName,
         password: password
@@ -150,15 +150,16 @@ function loginCredentials(event) {
     fetch('https://nusmsl.com/api/login', option)
         .then((res) => res.json())
         .then((data) => {
-            localStorage.setItem("token", data.token);
-            render(); // render if successful login
+            sessionStorage.setItem("token", data.token);
+
+            location.reload();
         })
         .catch((err) => {
             console.log(err)
             let loginResult = document.getElementById('loginResult');
             err.msg
                 ? loginResult.textContent = err.msg
-                : loginResult.textContent = "Login failed.";
+                : loginResult.textContent = 'Login failed.';
             loginResult.classList.add('incorrect');
         })
 }
@@ -166,7 +167,7 @@ function loginCredentials(event) {
 // Do answer check on front end and send puzzleName to /api/solve along with token.
 function submitAnswer(event) {
     event.preventDefault();
-    let answer = $('#checkAnswerForm input').value;
+    let answer = $('#checkAnswerForm input').val();
     let puzzleId = $('#checkAnswerModal').attr('data-puzzle-id');
 
     let result = checkAnswer(puzzleId, answer);
