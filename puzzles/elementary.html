@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Elementary</title>
+
+  <!-- Meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1200, initial-scale=0">
+  <meta name="google" content="notranslate">
+
+  <!-- Sources -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/hunt.js"></script>
+  <script src="../assets/js/jquery-ui.min.js"></script>
+  <script src="../assets/js/puzzle.js"></script>
+
+
+  <link rel="stylesheet" href="../assets/css/bootstrap-reduced.css">
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../assets/css/puzzle.css">
+  <link rel="stylesheet" href="../assets/css/fos_puzzle_page.css">
+  <link rel="stylesheet" href="../assets/css/backgrounds/fos.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+  <!-- Icons and Styles -->
+  <!-- Generics -->
+  <link rel="icon" href="../assets/icons/favicon-32.png" sizes="32x32"/>
+  <link rel="icon" href="../assets/icons/favicon-96.png" sizes="96x96"/>
+  <link rel="icon" href="../assets/icons/favicon-128.png" sizes="128x128"/>
+  <link rel="icon" href="../assets/icons/favicon-192.png" sizes="192x192"/>
+  <!-- Android -->
+  <link rel="shortcut icon" href="../assets/icons/favicon-196.png" sizes="196x196"/>
+  <!-- iOS -->
+  <link rel="apple-touch-icon" href="../assets/icons/favicon-120.png" sizes="120x120"/>
+  <link rel="apple-touch-icon" href="../assets/icons/favicon-152.png" sizes="152x152"/>
+  <link rel="apple-touch-icon" href="../assets/icons/favicon-167.png" sizes="167x167"/>
+  <link rel="apple-touch-icon" href="../assets/icons/favicon-180.png" sizes="180x180"/>
+  <!-- iOS icon title -->
+  <meta name="apple-mobile-web-app-title" content="UFO15"/>
+
+  <style>
+    .tooltip-title {
+      font-family: CrimsonText-Regular, serif;
+      font-size: 15px;
+      text-align: center;
+    }
+
+    #header-change-contact-info .modal-header-text {
+      font-size: 30px;
+      font-family: BlackBeard, sans-serif;
+    }
+
+    #header-change-contact-info input {
+      font-family: CrimsonText-Regular, serif;
+      font-size: 22px;
+      line-height: 29px;
+    }
+  </style>
+  <!-- Fill in appropriate puzzle content styles -->
+  <style>
+    .puzzle-content ul {
+        padding-right: 10px;
+    }
+    .puzzle-content li {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        padding-bottom: .5em;
+    }
+    .puzzle-content span.left {
+        flex: 1;
+        max-width: 37.5%;
+        text-align: right;
+    }
+    .puzzle-content span.center {
+        border-bottom: 2px solid black;
+        flex: 1;
+        margin-left: .5em;
+    }
+    .puzzle-content span.right {
+        flex: 0 0 10%;
+        padding-left: .5em;
+        text-align: left;
+    }
+
+    @media print {
+        .puzzle-content ul {
+            font-size: 90%;
+            page-break-inside: avoid;
+        }
+    }
+  </style>
+</head>
+
+<body>
+<div class="fixed-header">
+  <div class="fixed-header-inner" id="header-bar">
+    <div class="header-links">
+      <div class="header-link"><a href="../map.html">Map</a></div>
+      <div class="header-link header-dropdown">
+        <div class="header-dropdown-title"><a href="elementary.html#"> Useful Links <span
+            class="fas fa-caret-down"></span></a></div>
+        <div class="dropdown-content-wrapper">
+          <div class="dropdown-link"><a href="../guide.html">Guide</a></div>
+          <div class="dropdown-link"><a href="../puzzle.html">List of Puzzles</a></div>
+          <div class="dropdown-link"><a href="../errata.html">Errata</a></div>
+          <div class="dropdown-link"><a href="../faq.html">FAQs</a></div>
+          <div class="dropdown-link"><a href="../leaderboard.html">Leaderboard</a></div>
+          <div class="dropdown-link"><a href="../credits.html">Credits</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="overall-layout-body">
+  <div class="puzzle-container unlocked">
+    <div id="header" class="puzzle-header">
+
+      <div class="header-anchor-graphic">
+        <div class="town-building">
+          <a href="../faculties/fos.html">
+            <img src="../assets/images/faculties/fos_building.png"/>
+          </a>
+        </div>
+      </div>
+      <div class="header-textual-data">
+        <div class="town-name">
+          <a href="../faculties/fos.html">
+            <img src="../assets/images/faculties/fos_name.png"/>
+          </a>
+        </div>
+        <div class="name-container">
+          <div class="name-items">
+            <div class="title-text">
+              Elementary
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <div id="puzzle" class="puzzle">
+
+      <div id="flavor" class="flavor">
+        You notice a short wizard, Watson, in a trench coat. 
+        He comes after you, saying “Math is often not as it seems, though it is rather elementary.” 
+        He continues, “Chemistry on the other hand, is periodically essential, 
+        as you try to fill the spaces in your knowledge.”
+        What else did Watson say to you?
+      </div>
+
+      <div class="puzzle-content">
+        <ul>
+            <li><span class="left">57 + 38 + 85 - 88 =</span><span class="center"></span><span class="right">(7 , 2)</span></li>
+            <li><span class="left">14 + 116 =</span><span class="center"></span><span class="right">(24 , 20)</span></li>
+            <li><span class="left">1 + 8 + 29 - 6 + 7 =</span><span class="center"></span><span class="right">(4 , 10)</span></li>
+            <li><span class="left">97 - 19 + 68 + 39 =</span><span class="center"></span><span class="right">(27 , 18)</span></li>
+            <li><span class="left">23 + 12 + 71 - 92 =</span><span class="center"></span><span class="right">(15 , 12)</span></li>
+            <li><span class="left">102 + 37 - 5 + 74 =</span><span class="center"></span><span class="right">(21)</span></li>
+            <li><span class="left">16 + 67 + 16 =</span><span class="center"></span><span class="right">(21 , 24)</span></li>
+            <li><span class="left">90 + 118 + 18 - 31 =</span><span class="center"></span><span class="right">(20 , 7)</span></li>
+            <li><span class="left">63 - 92 + 7 + 31 + 38 - 33 =</span><span class="center"></span><span class="right">(27 , 21)</span></li>
+
+            <li><span class="left">27 + 15 + 15 =</span><span class="center"></span><span class="right">(13 , 30)</span></li>
+            <li><span class="left">112 + 107 - 41 + 33 =</span><span class="center"></span><span class="right">(16 , 21)</span></li>
+            <li><span class="left">99 + 96 - 21 + 78 =</span><span class="center"></span><span class="right">(19 , 21)</span></li>
+            <li><span class="left">53 + 116 - 23 + 71 =</span><span class="center"></span><span class="right">(18 , 24)</span></li>
+            
+            <li><span class="left">45 + 32 - 80 + 110 + 113 - 50 =</span><span class="center"></span><span class="right">(7 , 16)</span></li>
+            <li><span class="left">34 + 20 + 42 - 95 =</span><span class="center"></span><span class="right">(20 , 22)</span></li>
+            <li><span class="left">75 + 22 =</span><span class="center"></span><span class="right">(4 , 29)</span></li>
+            <li><span class="left">25 + 94 - 93 + 51 + 111 - 35 =</span><span class="center"></span><span class="right">(22 , 21)</span></li>
+        </ul>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+</div>
+</body>
+</html>
