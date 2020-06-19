@@ -151,7 +151,7 @@ function loginCredentials(event) {
         .then((res) => res.json())
         .then((data) => {
             sessionStorage.setItem("token", data.token);
-
+            sessionStorage.setItem('groupName', teamName);
             location.reload();
         })
         .catch((err) => {
@@ -175,7 +175,7 @@ function submitAnswer(event) {
 
     if (result.correct) {
         let data = {
-            puzzleName: puzzleId
+            puzzleName: puzzleId // 'puzzle_12'
         }
         let option = {
             method: 'POST',
@@ -189,15 +189,18 @@ function submitAnswer(event) {
         fetch('https://nusmsl.com/api/solve', option)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                if (data.Solved === 'true') {
+                    $('#checkAnswerResult')
+                        .text('Your team has solved the puzzle.')
+                        .addClass('correct');
+                } else {
+                    $('#checkAnswerResult')
+                        .text('Correct!')
+                        .addClass('correct');
+                }
             })
             .catch((err) => {
                 console.log(err)
-            })
-            .finally(() => {
-                $('#checkAnswerResult')
-                    .text('Correct!')
-                    .addClass('correct');
             });
     } else if (result.message) {
         $('#checkAnswerResult')
