@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-  <title>Protein Geeks</title>
+  <title>The Traveller</title>
 
   <!-- Meta tags -->
   <meta charset="utf-8">
@@ -21,8 +21,8 @@
   <link rel="stylesheet" href="../assets/css/common.css">
   <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
   <link rel="stylesheet" href="../assets/css/puzzle.css">
-  <link rel="stylesheet" href="../assets/css/fos_puzzle_page.css">
-  <link rel="stylesheet" href="../assets/css/backgrounds/fos.css">
+  <link rel="stylesheet" href="../assets/css/biz_puzzle_page.css">
+  <link rel="stylesheet" href="../assets/css/backgrounds/biz.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
         integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
@@ -62,8 +62,38 @@
   </style>
   <!-- Fill in appropriate puzzle content styles -->
   <style>
-    .puzzle-content .clue { margin: 1em 0; }
-  .puzzle-content .clue li { margin-left: 4ex; text-indent: -4ex; }
+      .puzzle-content .listings {
+      width: 100%;
+    }
+    .puzzle-content .listings table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 2px solid black;
+      font-family: monospace;
+      font-size: 16px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .puzzle-content .listings table td { 
+      padding: 0.2em 0.6em;
+      border: 1px solid black;
+    }
+    .puzzle-content .listings table th { 
+      padding: 0.2em 0.5em; 
+      font-weight: bold;
+      font-size: 1.3em;
+    }
+    .puzzle-content .listings table tr:nth-child(1) {
+      font-weight: bold;
+      text-align: center; 
+    }
+    .puzzle-content .listings table td:nth-child(1) {
+      width: 9%;
+    }
+    .puzzle-content .listings table td:nth-child(2) {
+      text-align: left;
+      width: 80%;
+    }
   </style>
 </head>
 
@@ -73,7 +103,7 @@
     <div class="header-links">
       <div class="header-link"><a href="../map.html">Map</a></div>
       <div class="header-link header-dropdown">
-        <div class="header-dropdown-title"><a href="protein_geeks.html#"> Useful Links <span
+        <div class="header-dropdown-title"><a href="the_traveller.html#"> Useful Links <span
             class="fas fa-caret-down"></span></a></div>
         <div class="dropdown-content-wrapper">
           <div class="dropdown-link"><a href="../guide.html">Guide</a></div>
@@ -85,30 +115,37 @@
         </div>
       </div>
     </div>
+
+
+    
+
+
   </div>
 </div>
 
 <div class="overall-layout-body">
+
+
   <div class="puzzle-container unlocked">
     <div id="header" class="puzzle-header">
 
       <div class="header-anchor-graphic">
         <div class="town-building">
-          <a href="../faculties/fos.html">
-            <img src="../assets/images/faculties/fos_building.png"/>
+          <a href="../faculties/biz.html">
+            <img src="../assets/images/faculties/biz_building.png"/>
           </a>
         </div>
       </div>
       <div class="header-textual-data">
         <div class="town-name">
-          <a href="../faculties/fos.html">
-            <img src="../assets/images/faculties/fos_name.png"/>
+          <a href="../faculties/biz.html">
+            <img src="../assets/images/faculties/biz_name.png"/>
           </a>
         </div>
         <div class="name-container">
           <div class="name-items">
             <div class="title-text">
-              Protein Geeks
+              The Traveller
             </div>
           </div>
         </div>
@@ -121,53 +158,79 @@
     <div id="puzzle" class="puzzle">
 
       <div id="flavor" class="flavor">
-        placeholder
+        You stumble upon what used to be the office of Christoph Colombo, 
+        the world famous travelling wizard of the 1800s. 
+        You see a list of cities with numbers next to them on his desk, along with the phrase “Eye Ay Tea Ay”. 
+        Perhaps, there is a secret message?
+
       </div>
 
       <div class="puzzle-content">
-        <div class="clues">
-            <ul class="clue">
-                <li>(1.8Å)</li>
-                <li>Number of ATP required per DNA ligase turnover</li>
-                <li>First base of nonsense codons</li>
-                <li>"+213"</li>
-            </ul>
-            <ul class="clue">
-                <li>(1.78Å)</li>
-                <li>The theoretical maximum of ATP produced (rounded to nearest integer) per respiratory NADH oxidation</li>
-                <li>The heaviest atom of the group that is removed during ATP hydrolysis</li>
-                <li>Redmi Note, 6.3-inch full-HD+ LCD display, Snapdragon 665 AIE SoC, up to 4GB LPDDR4X RAM and up to 128GB storage with NFC Support and will not launch in India</li>
-            </ul>
-            <ul class="clue">
-                <li>(2.69Å)</li>
-                <li>Number of CO2 molecules released in each turn of the Krebs Cycle</li>
-                <li>Resume (n)</li>
-                <li>Number of types of human cell division</li>
-            </ul>
-            <ul class="clue">
-                <li>(1.9Å)</li>
-                <li>Number of carbons in the sugar present in nucleic acids </li>
-                <li>Mammalian chromosome whose activity is regulated by dosage compensation</li>
-                <li>The abbreviation of the group of proteins that mediate communication between cells, and are most prominently involved in cell growth regulation, and the activation of the cell's immune response in the form of inflammation</li>
-
-            </ul>
-            <ul class="clue">
-                <li>(3.5Å)</li>
-                <li>Number of net positive charge transferred to the extracellular space in the Na+/K+ ion channel</li>
-                <li>Irvine; FTP; Elsword; </li>
-            </ul>
-            <ul class="clue">
-                <li>(2.7Å)</li>
-                <li>Number of pyruvate produced per glucose molecule entering glycolysis</li>
-                <li>camino, nino, salvador</li>
-                <li>The first digit of the phenotypic ratio obtained from a Mendelian dihybrid cross with independent assortment</li>
-            </ul>
-            <ul class="clue">
-                <li>(2.05Å)</li>
-                <li>https://www.youtube.com/watch?v=-ki8gmCjK1U (0:08; 1:14; 2:34)</li>
-                <li>8192 bit</li>
-            </ul>
-        </div>
+        <div class="listings">
+            <table>
+              <thead>
+                <tr>
+                  <th colspan="2">Places I've Travelled To</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Times</td>
+                  <td>City</td>
+                  
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Doha, Qatar</td>
+                  
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Toronto, Canada</td> 
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Wausau, Wisconsin, USA</td> 
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Anvik, Alaska</td> 
+                </tr>
+                <tr>
+                  <td>23</td>
+                  <td>New York, New York</td> 
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Adelaide, Australia</td> 
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Yerevan, Armenia</td> 
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Helsinki, Iceland</td> 
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Porto, Portugal</td> 
+                </tr>
+                <tr>
+                  <td>13</td>
+                  <td>Cairo, Egypt</td> 
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Jinan, China</td> 
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Port au Prince, Haiti</td> 
+                </tr>
+              </tbody>
+            </table>
+            </div>
 
       </div>
 

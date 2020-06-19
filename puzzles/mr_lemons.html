@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-  <title>Protein Geeks</title>
+  <title>Mr. Lemons</title>
 
   <!-- Meta tags -->
   <meta charset="utf-8">
@@ -21,8 +21,8 @@
   <link rel="stylesheet" href="../assets/css/common.css">
   <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
   <link rel="stylesheet" href="../assets/css/puzzle.css">
-  <link rel="stylesheet" href="../assets/css/fos_puzzle_page.css">
-  <link rel="stylesheet" href="../assets/css/backgrounds/fos.css">
+  <link rel="stylesheet" href="../assets/css/biz_puzzle_page.css">
+  <link rel="stylesheet" href="../assets/css/backgrounds/biz.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
         integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
@@ -62,8 +62,12 @@
   </style>
   <!-- Fill in appropriate puzzle content styles -->
   <style>
-    .puzzle-content .clue { margin: 1em 0; }
-  .puzzle-content .clue li { margin-left: 4ex; text-indent: -4ex; }
+      #chunk{
+          display: block;
+          max-width: 100%;
+          margin: auto;
+          text-align: center;
+      }
   </style>
 </head>
 
@@ -73,7 +77,7 @@
     <div class="header-links">
       <div class="header-link"><a href="../map.html">Map</a></div>
       <div class="header-link header-dropdown">
-        <div class="header-dropdown-title"><a href="protein_geeks.html#"> Useful Links <span
+        <div class="header-dropdown-title"><a href="mr_lemons.html#"> Useful Links <span
             class="fas fa-caret-down"></span></a></div>
         <div class="dropdown-content-wrapper">
           <div class="dropdown-link"><a href="../guide.html">Guide</a></div>
@@ -85,30 +89,37 @@
         </div>
       </div>
     </div>
+
+
+    
+
+
   </div>
 </div>
 
 <div class="overall-layout-body">
+
+
   <div class="puzzle-container unlocked">
     <div id="header" class="puzzle-header">
 
       <div class="header-anchor-graphic">
         <div class="town-building">
-          <a href="../faculties/fos.html">
-            <img src="../assets/images/faculties/fos_building.png"/>
+          <a href="../faculties/biz.html">
+            <img src="../assets/images/faculties/biz_building.png"/>
           </a>
         </div>
       </div>
       <div class="header-textual-data">
         <div class="town-name">
-          <a href="../faculties/fos.html">
-            <img src="../assets/images/faculties/fos_name.png"/>
+          <a href="../faculties/biz.html">
+            <img src="../assets/images/faculties/biz_name.png"/>
           </a>
         </div>
         <div class="name-container">
           <div class="name-items">
             <div class="title-text">
-              Protein Geeks
+              Mr. Lemons
             </div>
           </div>
         </div>
@@ -121,54 +132,25 @@
     <div id="puzzle" class="puzzle">
 
       <div id="flavor" class="flavor">
-        placeholder
+        Transfiguration, if not done properly, will result in horrendous half-transformations, such as having an extra limb. 
+        As such, Transfiguration Professor, Mr. Lemons, decided to draft a series of riddles as a pop quiz to emphasise the 
+        limitations of Transfiguration. However, due to the various meetings and classes he had, when he finally sat down to finish the quiz, 
+        he could not figure out what was the answer to his last question. What is it that Transfiguration cannot give?
+
       </div>
-
+      
       <div class="puzzle-content">
-        <div class="clues">
-            <ul class="clue">
-                <li>(1.8Å)</li>
-                <li>Number of ATP required per DNA ligase turnover</li>
-                <li>First base of nonsense codons</li>
-                <li>"+213"</li>
-            </ul>
-            <ul class="clue">
-                <li>(1.78Å)</li>
-                <li>The theoretical maximum of ATP produced (rounded to nearest integer) per respiratory NADH oxidation</li>
-                <li>The heaviest atom of the group that is removed during ATP hydrolysis</li>
-                <li>Redmi Note, 6.3-inch full-HD+ LCD display, Snapdragon 665 AIE SoC, up to 4GB LPDDR4X RAM and up to 128GB storage with NFC Support and will not launch in India</li>
-            </ul>
-            <ul class="clue">
-                <li>(2.69Å)</li>
-                <li>Number of CO2 molecules released in each turn of the Krebs Cycle</li>
-                <li>Resume (n)</li>
-                <li>Number of types of human cell division</li>
-            </ul>
-            <ul class="clue">
-                <li>(1.9Å)</li>
-                <li>Number of carbons in the sugar present in nucleic acids </li>
-                <li>Mammalian chromosome whose activity is regulated by dosage compensation</li>
-                <li>The abbreviation of the group of proteins that mediate communication between cells, and are most prominently involved in cell growth regulation, and the activation of the cell's immune response in the form of inflammation</li>
-
-            </ul>
-            <ul class="clue">
-                <li>(3.5Å)</li>
-                <li>Number of net positive charge transferred to the extracellular space in the Na+/K+ ion channel</li>
-                <li>Irvine; FTP; Elsword; </li>
-            </ul>
-            <ul class="clue">
-                <li>(2.7Å)</li>
-                <li>Number of pyruvate produced per glucose molecule entering glycolysis</li>
-                <li>camino, nino, salvador</li>
-                <li>The first digit of the phenotypic ratio obtained from a Mendelian dihybrid cross with independent assortment</li>
-            </ul>
-            <ul class="clue">
-                <li>(2.05Å)</li>
-                <li>https://www.youtube.com/watch?v=-ki8gmCjK1U (0:08; 1:14; 2:34)</li>
-                <li>8192 bit</li>
-            </ul>
-        </div>
-
+        <div id="chunk">
+        "Refresh this page" is an anagram of
+        "<span id="ana"></span>"!
+    </div>
+        <script>
+            var anagrams = new Array("elf gatherer ships","eight fish reapers","a fresh sphere gift","the geisha prefers")
+            randomnum=Math.floor(Math.random()*4);
+            para=document.getElementById('ana');
+            para.innerHTML=anagrams[randomnum]
+        </script>
+        
       </div>
 
 
