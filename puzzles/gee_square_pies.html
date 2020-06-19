@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Gee, Square Pies</title>
+
+  <!-- Meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1200, initial-scale=0">
+  <meta name="google" content="notranslate">
+
+  <!-- Sources -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/hunt.js"></script>
+  <script src="../assets/js/jquery-ui.min.js"></script>
+  <script src="../assets/js/puzzle.js"></script>
+
+
+  <link rel="stylesheet" href="../assets/css/bootstrap-reduced.css">
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../assets/css/puzzle.css">
+  <link rel="stylesheet" href="../assets/css/biz_puzzle_page.css">
+  <link rel="stylesheet" href="../assets/css/backgrounds/biz.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+  <!-- Icons and Styles -->
+  <!-- Generics -->
+  <link rel="icon" href="../assets/icons/favicon-32.png" sizes="32x32"/>
+  <link rel="icon" href="../assets/icons/favicon-96.png" sizes="96x96"/>
+  <link rel="icon" href="../assets/icons/favicon-128.png" sizes="128x128"/>
+  <link rel="icon" href="../assets/icons/favicon-192.png" sizes="192x192"/>
+  <!-- Android -->
+  <link rel="shortcut icon" href="../assets/icons/favicon-196.png" sizes="196x196"/>
+  <!-- iOS -->
+  <link rel="apple-touch-icon" href="../assets/icons/favicon-120.png" sizes="120x120"/>
+  <link rel="apple-touch-icon" href="../assets/icons/favicon-152.png" sizes="152x152"/>
+  <link rel="apple-touch-icon" href="../assets/icons/favicon-167.png" sizes="167x167"/>
+  <link rel="apple-touch-icon" href="../assets/icons/favicon-180.png" sizes="180x180"/>
+  <!-- iOS icon title -->
+  <meta name="apple-mobile-web-app-title" content="UFO15"/>
+
+  <style>
+    .tooltip-title {
+      font-family: CrimsonText-Regular, serif;
+      font-size: 15px;
+      text-align: center;
+    }
+
+    #header-change-contact-info .modal-header-text {
+      font-size: 30px;
+      font-family: BlackBeard, sans-serif;
+    }
+
+    #header-change-contact-info input {
+      font-family: CrimsonText-Regular, serif;
+      font-size: 22px;
+      line-height: 29px;
+    }
+  </style>
+  <!-- Fill in appropriate puzzle content styles -->
+  <style>
+      @import url('https://fonts.googleapis.com/css?family=EB+Garamond|Niconne');
+  .puzzle-content #recipe {
+      margin: 3em 4em;
+      
+      background-color: #fbf3ea;
+      min-width: 320px;
+      max-width: 500px;
+      padding: 2em 5em; 
+  }
+  .puzzle-content .ingredients{
+    font-size: 18pt;
+      font-family: 'Niconne', cursive;
+      margin: 1em 0;
+      width: 100%;
+  }
+  .puzzle-content .component {
+      font-size: 18pt;
+      font-family: 'EB Garamond', serif; font-weight: bold;
+      margin-top: 2em;  text-align: center; text-transform: uppercase; }
+
+.puzzle-content .subheader{
+    font-size: 15pt;
+      font-family: 'EB Garamond', serif; font-weight: bold;
+      margin-top: 2em;  text-align: center; text-transform: uppercase;
+}
+  .puzzle-content .step {
+      font-size: 18pt;
+      font-family: 'Niconne', cursive;
+      margin: 1em 0;
+      width: 100%;
+  }
+  .puzzle-content .step { text-align: left; }
+  .puzzle-content .ingredients {text-align: center;}
+  </style>
+</head>
+
+<body>
+<div class="fixed-header">
+  <div class="fixed-header-inner" id="header-bar">
+    <div class="header-links">
+      <div class="header-link"><a href="../map.html">Map</a></div>
+      <div class="header-link header-dropdown">
+        <div class="header-dropdown-title"><a href="gee_square_pies.html#"> Useful Links <span
+            class="fas fa-caret-down"></span></a></div>
+        <div class="dropdown-content-wrapper">
+          <div class="dropdown-link"><a href="../guide.html">Guide</a></div>
+          <div class="dropdown-link"><a href="../puzzle.html">List of Puzzles</a></div>
+          <div class="dropdown-link"><a href="../errata.html">Errata</a></div>
+          <div class="dropdown-link"><a href="../faq.html">FAQs</a></div>
+          <div class="dropdown-link"><a href="../leaderboard.html">Leaderboard</a></div>
+          <div class="dropdown-link"><a href="../credits.html">Credits</a></div>
+        </div>
+      </div>
+    </div>
+
+
+    
+
+
+  </div>
+</div>
+
+<div class="overall-layout-body">
+
+
+  <div class="puzzle-container unlocked">
+    <div id="header" class="puzzle-header">
+
+      <div class="header-anchor-graphic">
+        <div class="town-building">
+          <a href="../faculties/biz.html">
+            <img src="../assets/images/faculties/biz_building.png"/>
+          </a>
+        </div>
+      </div>
+      <div class="header-textual-data">
+        <div class="town-name">
+          <a href="../faculties/biz.html">
+            <img src="../assets/images/faculties/biz_name.png"/>
+          </a>
+        </div>
+        <div class="name-container">
+          <div class="name-items">
+            <div class="title-text">
+              Gee, Square Pies
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <div id="puzzle" class="puzzle">
+
+      <div id="flavor" class="flavor">
+        A British, Russian and American engineer were arguing about whose home country had the superior measurement system; 
+        and so, they decided to hold a pie contest in which each contestant will use their own country's measurement units 
+        to bake their own pie. However, in the end, the judges were not satisfied with any of the pies. 
+        When inquired, the judges replied, "Precision is key, but there seemed to be a lack of it. 
+        Perhaps the three of you were thinking of a different pie?" What pie could the judges be referring to?
+      </div>
+
+      <div class="puzzle-content">
+        
+        <div id="recipe">
+            <div class="component">The Yeast Dough</div>
+            <div class="subheader">Ingredients</div>
+            <div class="ingredients">
+                <ul>
+                    <li>3.1g instant dry yeast</li>
+                    <li>100ml warm milk (or warm water)</li>
+                    <li>2.7g white sugar</li>
+                    <li>2 eggs, at room temperature</li>
+                    <li>1 tsp salt</li>
+                    <li>200ml milk (or water), at room temperature</li>
+                    <li>100g butter, melted</li>
+                    <li>~600g all-purpose/plain/white flour</li>
+                </ul>
+            </div>
+            <div class="subheader">Steps</div>
+            <div class="step">
+                
+              In a cup, stir warm milk, sugar and yeast together. Let stand until foamy for about 10 minutes. <br>
+              In a big bowl, crack eggs, add sugar, salt, milk, melted butter and stir together. Add sifted flour, yeast mixture and knead the dough until it’s smooth.<br>
+              Cover the bowl with wet cloth, put in a warm place and leave to rise for 1 hour. After that time, knead the dough again. Repeat this step one more time.
+
+              
+            </div>
+            <div class="component">The Filling</div>
+            <div class="subheader">Ingredients</div>
+            <div class="ingredients">
+                <ul>
+                    <li>310g fresh salmon, cut into small cubes</li>
+                    <li>100g basmati or jasmine rice, cooked</li>
+                    <li>270g mushrooms, sliced and fried</li>
+                    <li>1 big onion, sliced and fried                  </li>
+                    <li>4 eggs, cooked and chopped                    </li>
+                    <li>2+2 Tbsp finely chopped dill and parsley</li>
+                    <li>salt and freshly ground black pepper</li>
+                </ul>
+            </div>
+
+            <div class="component">The Pancake</div>
+            <div class="subheader">Ingredients</div>
+            <div class="ingredients">
+                <ul>
+                    <li>310ml full fat milk                    </li>
+                    <li>50ml warm water                    </li>
+                    <li>270g all-purpose flour</li>
+                    <li>2 eggs                    </li>
+                    <li>a good pinch of salt                    </li>
+                    <li>2 tbsp of sugar                    </li>
+                    <li>2 tbsp of sunflower oil                    </li>
+                    <li>3.1 tsp baking soda                    </li>
+                    <li>2.7 tsp of lemon juice or vinegar                    </li>
+                </ul>
+            </div>
+            <div class="subheader">Steps</div>
+            <div class="step">
+                
+                Break the eggs into a large bowl, add salt and sugar, whisk.<br>
+                Add the oil and milk, whisk again.<br>
+                Sift the flour into the bowl, whisk thoroughly.<br>
+                Add warm water and whisk to incorporate any lumps.<br>
+                Pour lemon juice or vinegar into a spoon with baking soda on it (to dissolve the soda), quickly add it into the batter and whisk a couple of times.<br>
+                While the mixture is resting (it allows the ingredients to blend together better), heat the pan; grease the pan with some oil, if needed.<br>
+                Evenly coat the pan with the batter. Cook about a minute, then flip the pancake and cook for 15-30 seconds more.<br>
+                Keep prepared pancakes in a warm place.
+
+              
+            </div>
+            <div class="component">The Glaze</div>
+            <div class="subheader">Ingredients</div>
+            <div class="ingredients">
+                <ul>
+                    <li>1 egg yolk beaten with 2 Tbsp milk, 1/2 tsp salt and 1/2 tsp sugar</li>
+                </ul>
+            </div>
+
+            <div class="component">Assembling</div>
+            <div class="step">
+                
+                On a floured surface, roll out the dough to approximately 27cm*31cm rectangular and 6mm thick. You can roll the dough on a piece of baking parchment, thus it’ll be much easier to transfer the pie on a baking tray; moreover, you need to turn the pie upside down-the sealing should be on the bottom.<br>
+                Coat the rolled dough with the pancakes.<br>
+                Place the egg and herbs mixture lengthways down the centre of the dough.<br>
+                Then arrange the mushrooms and onion mixture on top.<br>
+                Next, arrange rice. And the last layer-salmon.<br>
+                Cover the filling with pancakes, shape it to make a rectangular.<br>
+                Then, fold the dough and seal the edges.<br>
+                Transfer the pie upside down to a baking tray.<br>
+                Decorate with pastry trimmings, and cut two slits in the top with a sharp knife.<br>
+                Keep proofing for 27 minutes. Brush the pie with egg wash.<br>
+                Bake in a preheated 200C/400F oven for 31 minutes or until golden.<br>
+                Leave to cool slightly for 15 minutes before slicing.<br>
+                Serve with a glass of milk or a cup of freshly brewed tea.
+          </div>
+
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+</div>
+</body>
+</html>

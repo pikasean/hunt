@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>MRT Tracing</title>
+
+  <!-- Meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1200, initial-scale=0">
+  <meta name="google" content="notranslate">
+
+  <!-- Sources -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/hunt.js"></script>
+  <script src="../assets/js/jquery-ui.min.js"></script>
+  <script src="../assets/js/puzzle.js"></script>
+
+
+  <link rel="stylesheet" href="../assets/css/bootstrap-reduced.css">
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../assets/css/puzzle.css">
+  <link rel="stylesheet" href="../assets/css/engin_puzzle_page.css">
+  <link rel="stylesheet" href="../assets/css/backgrounds/engin.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+  <!-- Icons and Styles -->
+  <!-- Generics -->
+  <link rel="icon" href="../assets/icons/favicon-32.png" sizes="32x32"/>
+  <link rel="icon" href="../assets/icons/favicon-96.png" sizes="96x96"/>
+  <link rel="icon" href="../assets/icons/favicon-128.png" sizes="128x128"/>
+  <link rel="icon" href="../assets/icons/favicon-192.png" sizes="192x192"/>
+  <!-- Android -->
+  <link rel="shortcut icon" href="../assets/icons/favicon-196.png" sizes="196x196"/>
+  <!-- iOS -->
+  <link rel="apple-touch-icon" href="../assets/icons/favicon-120.png" sizes="120x120"/>
+  <link rel="apple-touch-icon" href="../assets/icons/favicon-152.png" sizes="152x152"/>
+  <link rel="apple-touch-icon" href="../assets/icons/favicon-167.png" sizes="167x167"/>
+  <link rel="apple-touch-icon" href="../assets/icons/favicon-180.png" sizes="180x180"/>
+  <!-- iOS icon title -->
+  <meta name="apple-mobile-web-app-title" content="UFO15"/>
+
+  <style>
+    .tooltip-title {
+      font-family: CrimsonText-Regular, serif;
+      font-size: 15px;
+      text-align: center;
+    }
+
+    #header-change-contact-info .modal-header-text {
+      font-size: 30px;
+      font-family: BlackBeard, sans-serif;
+    }
+
+    #header-change-contact-info input {
+      font-family: CrimsonText-Regular, serif;
+      font-size: 22px;
+      line-height: 29px;
+    }
+  </style>
+  <!-- Fill in appropriate puzzle content styles -->
+  
+  <style>
+    
+  
+    .puzzle-content .clue { margin: 1em 0; }
+  .puzzle-content .clue li { margin-left: 4ex; text-indent: -4ex; }
+  
+	
+  </style>
+</head>
+
+<body>
+<div class="fixed-header">
+  <div class="fixed-header-inner" id="header-bar">
+    <div class="header-links">
+      <div class="header-link"><a href="../map.html">Map</a></div>
+      <div class="header-link header-dropdown">
+        <div class="header-dropdown-title"><a href="mrt_tracing.html#"> Useful Links <span
+            class="fas fa-caret-down"></span></a></div>
+        <div class="dropdown-content-wrapper">
+          <div class="dropdown-link"><a href="../guide.html">Guide</a></div>
+          <div class="dropdown-link"><a href="../puzzle.html">List of Puzzles</a></div>
+          <div class="dropdown-link"><a href="../errata.html">Errata</a></div>
+          <div class="dropdown-link"><a href="../faq.html">FAQs</a></div>
+          <div class="dropdown-link"><a href="../leaderboard.html">Leaderboard</a></div>
+          <div class="dropdown-link"><a href="../credits.html">Credits</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="overall-layout-body">
+  <div class="puzzle-container unlocked">
+    <div id="header" class="puzzle-header">
+
+      <div class="header-anchor-graphic">
+        <div class="town-building">
+          <a href="../faculties/engin.html">
+            <img src="../assets/images/faculties/engin_building.png"/>
+          </a>
+        </div>
+      </div>
+      <div class="header-textual-data">
+        <div class="town-name">
+          <a href="../faculties/engin.html">
+            <img src="../assets/images/faculties/engin_name.png"/>
+          </a>
+        </div>
+        <div class="name-container">
+          <div class="name-items">
+            <div class="title-text">
+              MRT Tracing
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <div id="puzzle" class="puzzle">
+
+      <div id="flavor" class="flavor">
+        One of the trains had a major disruption along the way to Kent Ridge station. 
+        One of the fantastic beasts, Gryffin has escaped from its enclosure and is terrorising trains. 
+        What did the captain say to his passengers when Gryffin attacked?
+      </div>
+
+      <div class="puzzle-content">
+        
+        <div class="clues">
+            <ul class="clue">
+                <li><b>This is my place, thats John's place and over there is...? </b></li>
+                <li>Someone's place</li>
+                <li>Red</li>
+                <li>Green</li>
+            </ul>
+            <ul class="clue">
+                <li><b>Ah it must be fruitful here!</b></li>
+                <li>Trees</li>
+                <li>Red</li>
+                <li>Brown</li>
+            </ul>
+            <ul class="clue">
+                <li><b>"Am I rowdy?" "No you're not." </b></li>
+                <li>Quick</li>
+                <li>Red</li>
+                
+            </ul>
+            <ul class="clue">
+                <li><b>We always wonder why it is on this line...</b></li>
+                <li>Not on NS Line?</li>
+                <li>Green</li>
+            </ul>
+            <ul class="clue">
+                <li><b>Let's go I'll join it!</b></li>
+                <li>Check grammar</li>
+                <li>Green</li>
+            </ul>
+            <ul class="clue">
+                <li><b>Wah I can see from 200m above! </b></li>
+                <li>Ed Sheeran</li>
+                <li>Blue</li>
+            </ul>
+            <ul class="clue">
+                <li><b>Electrical ones </b></li>
+                <li>Hola!</li>
+                <li>Green</li>
+            </ul>
+            <ul class="clue">
+                <li><b>Probably a lot of Caucasians here...</b></li>
+                <li>Bridge</li>
+                <li>Red</li>
+            </ul>
+            <ul class="clue">
+                <li><b>Who got a sock from Harry?</b></li>
+                <li>Potter</li>
+                <li>Red</li>
+                <li>Purple + Yellow</li>
+            </ul>
+        
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+</div>
+</body>
+</html>
