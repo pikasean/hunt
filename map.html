@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="assets/css/bootstrap-reduced.css">
     <link rel="stylesheet" href="assets/css/common.css">
     <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
-    <link rel="stylesheet" href="assets/css/support.css">
+    
     <link rel="stylesheet" href="assets/css/backgrounds/general.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">  
     
@@ -55,7 +55,43 @@
           line-height: 29px;
       }
     </style>
-
+    <style>
+      
+  #main-page-content #map-page-container {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  #main-page-content #map-page-container #map-container {
+    width: 1100px;
+    max-width: 92%;
+    margin: 30px auto;
+    position: relative;
+  }
+  #main-page-content #map-page-container #map-container img#map {
+    width: 100%;
+    z-index: 0;
+  }
+  #main-page-content #map-page-container #map-container img.problem-glow {
+    display: none;
+    width: 27.73%;
+    position: absolute;
+    z-index: -50;
+  }
+  #main-page-content #map-page-container #map-container .map-link {
+    position: absolute;
+    background-color: rgba(0,0,0,0);
+  }
+  #main-page-content #map-page-container #map-container .map-link-town {
+    z-index: 200;
+  }
+  #main-page-content #map-page-container #map-container .map-link-problem {
+    z-index: 250;
+  }
+  #main-page-content #map-page-container #map-container .map-link-problem:hover + img.problem-glow{
+    display:block;
+  }
+    </style>
   </head>
 
   <body>
@@ -81,7 +117,92 @@
     <div id="main-page-content">
       <div id="map-page-container">
           <div id="map-container">
-              
+            <img id="map" src="assets/images/map.png" />
+
+            <a href="faculties/utown.html"><div id="link-utown" class="map-link map-link-town" 
+              style="height: 15%; width: 21%;
+              top: 17%; left: 29%;"></div></a>
+
+            <a href="faculties/yst.html"><div id="link-yst" class="map-link map-link-town" 
+              style="height: 16%; width: 17%;
+              top: 29%; left: 11%;"></div></a>
+
+            <a href="faculties/usc.html"><div id="link-usc" class="map-link map-link-town" 
+              style="height: 13%; width: 21%;
+              top: 31%; left: 51%;"></div></a>
+
+            <a href="puzzles/are_you_satisfactory_enough.html"><div id="link-metameta" class="map-link map-link-town" 
+              style="height: 20%; width: 16%;
+              top: 40%; left: 37%;"></div></a>
+
+            <a href="faculties/engin.html"><div id="link-engin" class="map-link map-link-town" 
+              style="height: 11.5%; width: 21%;
+              top: 49.5%; left: 6%;"></div></a>
+
+            <a href="faculties/fos.html"><div id="link-fos" class="map-link map-link-town" 
+              style="height: 15%; width: 16.5%;
+              top: 46.5%; left: 57%;"></div></a>
+
+            <a href="faculties/fass.html"><div id="link-fass" class="map-link map-link-town" 
+              style="height: 15%; width: 17%;
+              top: 62.5%; left: 17%;"></div></a>
+
+            <a href="faculties/soc.html"><div id="link-soc" class="map-link map-link-town" 
+              style="height: 15%; width: 15%;
+              top: 61%; left: 42%;"></div></a>
+
+            <a href="faculties/biz.html"><div id="link-biz" class="map-link map-link-town" 
+              style="height: 13%; width: 21%;
+              top: 67%; left: 64.5%;"></div></a>
+
+            <a href="metapuzzles/utown.html"><div id="link-utownmeta" class="map-link map-link-problem" 
+              style="height: 5.6%; width: 8%;
+              top: 23%; left:54%;"></div>
+              <img class="problem-glow" src="assets/images/meta-glow.png"
+              style="width: 15%;
+              top: 20%; left: 50%;" /></a>
+
+            <a href="metapuzzles/fos_yst.html"><div id="link-fos_yst" class="map-link map-link-problem" 
+              style="height: 5.6%; width: 8%;
+              top: 40.5%; left:30.5%;"></div>
+              <img class="problem-glow" src="assets/images/meta-glow.png"
+              style="width: 15%;
+              top: 37.5%; left: 26.5%;" /></a>
+
+            <a href="metapuzzles/engin_yst.html"><div id="link-engin_yst" class="map-link map-link-problem" 
+              style="height: 5.6%; width: 8%;
+              top: 44.5%; left:9%;"></div>
+              <img class="problem-glow" src="assets/images/meta-glow.png"
+              style="width: 15%;
+              top: 41.5%; left: 5%;" /></a>
+
+            <a href="metapuzzles/fass_engin.html"><div id="link-fass_engin" class="map-link map-link-problem" 
+              style="height: 5.6%; width: 8%;
+              top: 66.5%; left:8%;"></div>
+              <img class="problem-glow" src="assets/images/meta-glow.png"
+              style="width: 15%;
+              top: 63.5%; left: 4.5%;" /></a>
+
+            <a href="metapuzzles/fass_soc.html"><div id="link-fass_soc" class="map-link map-link-problem" 
+              style="height: 5.6%; width: 8%;
+              top: 67.5%; left:34.5%;"></div>
+              <img class="problem-glow" src="assets/images/meta-glow.png"
+              style="width: 15%;
+              top: 64.5%; left: 30.5%;" /></a>
+
+            <a href="metapuzzles/biz_soc.html"><div id="link-biz_soc" class="map-link map-link-problem" 
+              style="height: 5.6%; width: 8%;
+              top: 67.25%; left:57.5%;"></div>
+              <img class="problem-glow" src="assets/images/meta-glow.png"
+              style="width: 15%;
+              top: 64.25%; left: 53.5%;" /></a>
+
+            <a href="metapuzzles/biz_fos.html"><div id="link-biz_fos" class="map-link map-link-problem" 
+              style="height: 5.6%; width: 8%;
+              top: 62%; left:73%;"></div>
+              <img class="problem-glow" src="assets/images/meta-glow.png"
+              style="width: 15%;
+              top: 59%; left: 69%;" /></a>
           </div>
       </div>
     </div>

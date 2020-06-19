@@ -1,5 +1,5 @@
 # hunt
-a hunt for ufo15.
+a hunt for ufo15. This repository contains the front-end code. The back-end code can be found at [this repository](https://github.com/Aaronsms78/server).
 
 ## HTML, CSS, and JS
 A common source of errors is not having the proper CSS/JS file in the HTML page. Hence, we will detail the required files here.

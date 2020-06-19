@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Leftover Dice</title>
+
+  <!-- Meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1200, initial-scale=0">
+  <meta name="google" content="notranslate">
+
+  <!-- Sources -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/hunt.js"></script>
+  <script src="../assets/js/jquery-ui.min.js"></script>
+  <script src="../assets/js/puzzle.js"></script>
+
+
+  <link rel="stylesheet" href="../assets/css/bootstrap-reduced.css">
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../assets/css/puzzle.css">
+  <link rel="stylesheet" href="../assets/css/soc_puzzle_page.css">
+  <link rel="stylesheet" href="../assets/css/backgrounds/soc.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+  <!-- Icons and Styles -->
+  <!-- Generics -->
+  <link rel="icon" href="../assets/icons/favicon-32.png" sizes="32x32"/>
+  <link rel="icon" href="../assets/icons/favicon-96.png" sizes="96x96"/>
+  <link rel="icon" href="../assets/icons/favicon-128.png" sizes="128x128"/>
+  <link rel="icon" href="../assets/icons/favicon-192.png" sizes="192x192"/>
+  <!-- Android -->
+  <link rel="shortcut icon" href="../assets/icons/favicon-196.png" sizes="196x196"/>
+  <!-- iOS -->
+  <link rel="apple-touch-icon" href="../assets/icons/favicon-120.png" sizes="120x120"/>
+  <link rel="apple-touch-icon" href="../assets/icons/favicon-152.png" sizes="152x152"/>
+  <link rel="apple-touch-icon" href="../assets/icons/favicon-167.png" sizes="167x167"/>
+  <link rel="apple-touch-icon" href="../assets/icons/favicon-180.png" sizes="180x180"/>
+  <!-- iOS icon title -->
+  <meta name="apple-mobile-web-app-title" content="UFO15"/>
+
+  <style>
+    .tooltip-title {
+      font-family: CrimsonText-Regular, serif;
+      font-size: 15px;
+      text-align: center;
+    }
+
+    #header-change-contact-info .modal-header-text {
+      font-size: 30px;
+      font-family: BlackBeard, sans-serif;
+    }
+
+    #header-change-contact-info input {
+      font-family: CrimsonText-Regular, serif;
+      font-size: 22px;
+      line-height: 29px;
+    }
+  </style>
+  <!-- Fill in appropriate puzzle content styles -->
+  <style>
+      .puzzle-content section {
+			width: 750px;
+			margin: 1em auto;
+		}
+		.puzzle-content section img {
+			width: 100%;
+			height: auto;
+		}
+  </style>
+</head>
+
+<body>
+<div class="fixed-header">
+  <div class="fixed-header-inner" id="header-bar">
+    <div class="header-links">
+      <div class="header-link"><a href="../map.html">Map</a></div>
+      <div class="header-link header-dropdown">
+        <div class="header-dropdown-title"><a href="leftover_dice.html#"> Useful Links <span
+            class="fas fa-caret-down"></span></a></div>
+        <div class="dropdown-content-wrapper">
+          <div class="dropdown-link"><a href="../guide.html">Guide</a></div>
+          <div class="dropdown-link"><a href="../puzzle.html">List of Puzzles</a></div>
+          <div class="dropdown-link"><a href="../errata.html">Errata</a></div>
+          <div class="dropdown-link"><a href="../faq.html">FAQs</a></div>
+          <div class="dropdown-link"><a href="../leaderboard.html">Leaderboard</a></div>
+          <div class="dropdown-link"><a href="../credits.html">Credits</a></div>
+        </div>
+      </div>
+    </div>
+
+
+    
+
+
+  </div>
+</div>
+
+<div class="overall-layout-body">
+
+
+  <div class="puzzle-container unlocked">
+    <div id="header" class="puzzle-header">
+
+      <div class="header-anchor-graphic">
+        <div class="town-building">
+          <a href="../faculties/soc.html">
+            <img src="../assets/images/faculties/soc_building.png"/>
+          </a>
+        </div>
+      </div>
+      <div class="header-textual-data">
+        <div class="town-name">
+          <a href="../faculties/soc.html">
+            <img src="../assets/images/faculties/soc_name.png"/>
+          </a>
+        </div>
+        <div class="name-container">
+          <div class="name-items">
+            <div class="title-text">
+              Leftover Dice
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <div id="puzzle" class="puzzle">
+
+      <div id="flavor" class="flavor">
+        In a SoC room, you come across a group of fellow students playing a game of dice. 
+        It’s a new game to you, but you quickly figure out the rules. 
+        They each cast colouring spells on their own dice (d6, d8, d10, d12, d20, d30), according to the rules below.
+        Note that only 1 dice is coloured for each colour.
+        What is the name of this game they're playing?
+      </div>
+
+      <div class="puzzle-content">
+        
+        <ul>
+            <li>
+                Red - the value rolled equals maximum value of the die
+            </li>
+            <li>
+                Yellow - the value rolled equals position of die in the list
+            </li>
+            <li>
+                Green - the value rolled is the lowest of all values rolled
+            </li>
+            <li>
+                Blue - the value rolled is equal to the length of their name
+            </li>
+            <li>
+                Purple - the value rolled is equal to the average of all values rolled
+            </li>
+        </ul>
+
+        <section>
+            <p>Janet's roll</p>
+            <img src="../assets/puzzles/leftover_dice/janet.png">
+        </section>
+        <section>
+            <p>Ryan's roll</p>
+            <img src="../assets/puzzles/leftover_dice/ryan.png">
+        </section>
+        <section>
+            <p>Alexander's roll</p>
+            <img src="../assets/puzzles/leftover_dice/alexander.png">
+        </section>
+        <section>
+            <p>Diana's roll</p>
+            <img src="../assets/puzzles/leftover_dice/diana.png">
+        </section>
+        <section>
+            <p>Christopher's roll</p>
+            <img src="../assets/puzzles/leftover_dice/christopher.png">
+        </section>
+        <section>
+            <p>Rosa's roll</p>
+            <img src="../assets/puzzles/leftover_dice/rosa.png">
+        </section>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+</div>
+</body>
+</html>

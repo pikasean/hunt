@@ -14,7 +14,7 @@
     <script src="../assets/js/bootstrap.min.js"></script>
     <script src="../assets/js/hunt.js"></script>
     <script src="../assets/js/jquery-ui.min.js"></script>
-    <script src="../assets/js/solutions.js"></script>    
+    <script src="../assets/js/puzzle.js"></script>    
     
     <link rel="stylesheet" href="../assets/css/bootstrap-reduced.css">
     <link rel="stylesheet" href="../assets/css/common.css">
@@ -98,7 +98,7 @@
 
   <body>
     <div class="fixed-header">
-      <div class="fixed-header-inner">
+      <div class="fixed-header-inner" id="header-bar">
         <div class="header-links">
           <div class="header-link"><a href="../map.html">Map</a></div>
           <div class="header-link header-dropdown">
@@ -113,33 +113,6 @@
             </div>
           </div>
         </div>
-
-
-
-        <div class="header-links">
-            <div id="check_answer" class="header-link"><a href="things.html#" data-toggle="modal" data-target="#checkAnswerModal">Check Answer</a></div>
-            <div id="submit" class="header-link"><a href="../solutions/things.html">Solution</a></div>
-          
-        
-          <div class="modal fade" id="checkAnswerModal" tabindex="-1" role="dialog" aria-labelledby="checkAnswerModalLabel" data-puzzle-id="things" >
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <span class="modal-title" id="checkAnswerModalLabel">Check Answer</span>
-                </div>
-                <div class="modal-body">
-                  <form id="checkAnswerForm" action="things.html#">
-                    <input type="text" placeholder="Enter answer here" /><br>
-                    <button type="submit">Check</button>
-                  </form>
-                  <div id="checkAnswerResult">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-                </div>
 
 
       </div>
@@ -181,8 +154,8 @@
         <div id="puzzle" class="puzzle">
 
             <div id="flavor" class="flavor">
-                An old wizard is trying to remember the name of a song he liked in his youth. 
-                However, he only remembers certain things. 
+                A middle-aged wizard is trying to remember the name of a song he liked in his youth. 
+                However, he only remembers certain things in the song. 
                 Can you help him recall the name of this song?
             </div>
 

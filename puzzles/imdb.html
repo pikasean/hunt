@@ -14,7 +14,7 @@
   <script src="../assets/js/bootstrap.min.js"></script>
   <script src="../assets/js/hunt.js"></script>
   <script src="../assets/js/jquery-ui.min.js"></script>
-  <script src="../assets/js/solutions.js"></script>
+  <script src="../assets/js/puzzle.js"></script>
 
 
   <link rel="stylesheet" href="../assets/css/bootstrap-reduced.css">
@@ -65,7 +65,7 @@
 
 <body>
 <div class="fixed-header">
-  <div class="fixed-header-inner">
+  <div class="fixed-header-inner" id="header-bar">
     <div class="header-links">
       <div class="header-link"><a href="../map.html">Map</a></div>
       <div class="header-link header-dropdown">
@@ -83,33 +83,7 @@
     </div>
 
 
-    <div class="header-links">
-      <div id="check_answer" class="header-link"><a href="imdb.html#" data-toggle="modal"
-                                                    data-target="#checkAnswerModal">Check Answer</a></div>
-      <div id="submit" class="header-link"><a href="../solutions/imdb.html">Solution</a></div>
-
-
-      <div class="modal fade" id="checkAnswerModal" tabindex="-1" role="dialog" aria-labelledby="checkAnswerModalLabel"
-           data-puzzle-id="imdb">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-              </button>
-              <span class="modal-title" id="checkAnswerModalLabel">Check Answer</span>
-            </div>
-            <div class="modal-body">
-              <form id="checkAnswerForm" action="imdb.html#">
-                <input type="text" placeholder="Enter answer here"/><br>
-                <button type="submit">Check</button>
-              </form>
-              <div id="checkAnswerResult">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    
 
 
   </div>
@@ -150,10 +124,10 @@
     <div id="puzzle" class="puzzle">
 
       <div id="flavor" class="flavor">
-        At the International Magic Database, several wizards are busy filing old records.
-        They have come across a tome that has lost its cover.
-        However, they are able to trace back the title of this tome through the ratings.
-        What is the title of this tome?
+        At the International Magic Database, several wizards are busy verifying old records.
+        They have come across a series that has lost all its records.
+        However, they are able to trace back the title of this series through cross-checking the ratings.
+        What is the title of this series?
       </div>
 
       <div class="puzzle-content">

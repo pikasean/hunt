@@ -2,7 +2,7 @@
 
 <html lang="en">
   <head>
-    <title>Business School/Faculty of Science</title>  
+    <title>Business School/Faculty of Science (Bob)</title>  
 
     <!-- Meta tags -->
     <meta charset="utf-8">
@@ -14,7 +14,7 @@
     <script src="../assets/js/bootstrap.min.js"></script>
     <script src="../assets/js/hunt.js"></script>
     <script src="../assets/js/jquery-ui.min.js"></script>
-    <script src="../assets/js/solutions.js"></script>
+    <script src="../assets/js/puzzle.js"></script>
     
     
     <link rel="stylesheet" href="../assets/css/bootstrap-reduced.css">
@@ -58,11 +58,17 @@
       }
     </style>
   <!-- Fill in appropriate puzzle content styles -->
+  <style>
+    #puzzle .puzzle-content img{
+        display: block;
+        max-width: 100%;
+    }
+</style>
   </head>
 
   <body>
     <div class="fixed-header">
-      <div class="fixed-header-inner">
+      <div class="fixed-header-inner" id="header-bar">
         <div class="header-links">
           <div class="header-link"><a href="../map.html">Map</a></div>
           <div class="header-link header-dropdown">
@@ -80,31 +86,6 @@
 
 
 
-        <div class="header-links">
-            <div id="check_answer" class="header-link"><a href="biz_fos.html#" data-toggle="modal" data-target="#checkAnswerModal">Check Answer</a></div>
-            <div id="submit" class="header-link"><a href="../solutions/biz_fos.html">Solution</a></div>
-          
-        
-          <div class="modal fade" id="checkAnswerModal" tabindex="-1" role="dialog" aria-labelledby="checkAnswerModalLabel" data-puzzle-id="biz_fos" >
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <span class="modal-title" id="checkAnswerModalLabel">Check Answer</span>
-                </div>
-                <div class="modal-body">
-                  <form id="checkAnswerForm" action="biz_fos.html#">
-                    <input type="text" placeholder="Enter answer here" /><br>
-                    <button type="submit">Check</button>
-                  </form>
-                  <div id="checkAnswerResult">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-                </div>
-
 
       </div>
     </div>
@@ -118,12 +99,13 @@
                 <div class="name-container">
                     <div class="name-items">
                         <div class="problem-graphic-container">
-                            <img id="problem-graphic" src="../assets/images/lamppost.png"/></div>
-                        </div>
+                            <img id="problem-graphic" src="../assets/images/wizards/bob.png"/></div>
+                        
                         <div class="title-text">
                             <div class="problem-holiday"><a href="../faculties/biz.html">Business School</a></div>
                             <div class="problem-holiday"><a href="../faculties/fos.html">Faculty of Science</a></div>
                         </div>
+                      </div>
                     </div>
                 </div>
         
@@ -132,18 +114,23 @@
         <div id="puzzle" class="puzzle">
 
             <div id="flavor" class="flavor">
-                Cipher blablabla
+              Bob the wizard recently uncovered this ancient scroll from his backyard. 
+              As he was a builder in his previous life, he had a lifetime of experience stacking base materials as they come, 
+              removing duplicates when they occur. 
+              Apparently in this life, as strong as his magic may be, magic alone cannot help Bob solve this encrypted message: 
+              he needs something to substitute magic. 
+              What branch of knowledge is Bob missing?
             </div>
 
             <div class="puzzle-content">
-
+              <img src="../assets/metapuzzles/biz_fos/scroll.png">
 
             </div>
 
 
             <div id="call-to-action" class="call-to-action">
-                To solve this metapuzzle, you will need answers from Business School and the Faculty of Science.
-                No answer is used more than one metapuzzle.
+                To solve this metapuzzle, you will need 3 answers from Business School, and 3 answers from the Faculty of Science.
+                No answer is used in more than one metapuzzle.
             </div>
 
         </div>

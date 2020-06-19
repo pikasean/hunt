@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>ModReg</title>
+
+  <!-- Meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1200, initial-scale=0">
+  <meta name="google" content="notranslate">
+
+  <!-- Sources -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/hunt.js"></script>
+  <script src="../assets/js/jquery-ui.min.js"></script>
+  <script src="../assets/js/puzzle.js"></script>
+
+
+  <link rel="stylesheet" href="../assets/css/bootstrap-reduced.css">
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../assets/css/puzzle.css">
+  <link rel="stylesheet" href="../assets/css/utown_puzzle_page.css">
+  <link rel="stylesheet" href="../assets/css/backgrounds/utown.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+  <!-- Icons and Styles -->
+  <!-- Generics -->
+  <link rel="icon" href="../assets/icons/favicon-32.png" sizes="32x32"/>
+  <link rel="icon" href="../assets/icons/favicon-96.png" sizes="96x96"/>
+  <link rel="icon" href="../assets/icons/favicon-128.png" sizes="128x128"/>
+  <link rel="icon" href="../assets/icons/favicon-192.png" sizes="192x192"/>
+  <!-- Android -->
+  <link rel="shortcut icon" href="../assets/icons/favicon-196.png" sizes="196x196"/>
+  <!-- iOS -->
+  <link rel="apple-touch-icon" href="../assets/icons/favicon-120.png" sizes="120x120"/>
+  <link rel="apple-touch-icon" href="../assets/icons/favicon-152.png" sizes="152x152"/>
+  <link rel="apple-touch-icon" href="../assets/icons/favicon-167.png" sizes="167x167"/>
+  <link rel="apple-touch-icon" href="../assets/icons/favicon-180.png" sizes="180x180"/>
+  <!-- iOS icon title -->
+  <meta name="apple-mobile-web-app-title" content="UFO15"/>
+
+  <style>
+    .tooltip-title {
+      font-family: CrimsonText-Regular, serif;
+      font-size: 15px;
+      text-align: center;
+    }
+
+    #header-change-contact-info .modal-header-text {
+      font-size: 30px;
+      font-family: BlackBeard, sans-serif;
+    }
+
+    #header-change-contact-info input {
+      font-family: CrimsonText-Regular, serif;
+      font-size: 22px;
+      line-height: 29px;
+    }
+  </style>
+  <!-- Fill in appropriate puzzle content styles -->
+  
+  <style>
+    .puzzle-content .listings {
+      width: 100%;
+    }
+    .puzzle-content .listings table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 2px solid black;
+      font-family: monospace;
+      font-size: 16px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .puzzle-content .listings table td { 
+      padding: 0.2em 0.6em;
+      border: 1px solid black;
+    }
+    .puzzle-content .listings table th { 
+      padding: 0.2em 0.5em; 
+      font-weight: bold;
+      font-size: 1.3em;
+    }
+    .puzzle-content .listings table tr:nth-child(1) {
+      font-weight: bold;
+      text-align: center; 
+    }
+    .puzzle-content .listings table td:nth-child(1) {
+      width: 9%;
+    }
+    .puzzle-content .listings table td:nth-child(2) {
+      text-align: left;
+      width: 80%;
+    }
+  </style>
+</head>
+
+<body>
+<div class="fixed-header">
+  <div class="fixed-header-inner" id="header-bar">
+    <div class="header-links">
+      <div class="header-link"><a href="../map.html">Map</a></div>
+      <div class="header-link header-dropdown">
+        <div class="header-dropdown-title"><a href="modreg.html#"> Useful Links <span
+            class="fas fa-caret-down"></span></a></div>
+        <div class="dropdown-content-wrapper">
+          <div class="dropdown-link"><a href="../guide.html">Guide</a></div>
+          <div class="dropdown-link"><a href="../puzzle.html">List of Puzzles</a></div>
+          <div class="dropdown-link"><a href="../errata.html">Errata</a></div>
+          <div class="dropdown-link"><a href="../faq.html">FAQs</a></div>
+          <div class="dropdown-link"><a href="../leaderboard.html">Leaderboard</a></div>
+          <div class="dropdown-link"><a href="../credits.html">Credits</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="overall-layout-body">
+  <div class="puzzle-container unlocked">
+    <div id="header" class="puzzle-header">
+
+      <div class="header-anchor-graphic">
+        <div class="town-building">
+          <a href="../faculties/utown.html">
+            <img src="../assets/images/faculties/utown_building.png"/>
+          </a>
+        </div>
+      </div>
+      <div class="header-textual-data">
+        <div class="town-name">
+          <a href="../faculties/utown.html">
+            <img src="../assets/images/faculties/utown_name.png"/>
+          </a>
+        </div>
+        <div class="name-container">
+          <div class="name-items">
+            <div class="title-text">
+              ModReg
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <div id="puzzle" class="puzzle">
+
+      <div id="flavor" class="flavor">
+        Ariane is pursuing a degree in Defense against the Dark Arts. 
+        Unfortunately, he has to fulfil the General Education requirements for his school. 
+        There are 6 GE pillars in total, and he decided to take all of them in one semester. 
+        However, there is a twist: he can’t just select any module under the pillar, 
+        he has to select the one suitable for his major. 
+        As he has no time turner, what would happen to him if he took this combination of modules?
+      </div>
+
+      <div class="puzzle-content">
+        <div class="listings">
+            <table>
+              <thead>
+                <tr>
+                  <th colspan="2">Pillar 1 - <font color="red">Beast</font> Taming</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Code</td>
+                  <td>Module Name</td>
+                  
+                </tr>
+                <tr>
+                  <td>BT0305</td>
+                  <td>Travelling With Your Pet Across the Globe: Astonishing Power and Responsibility</td>
+                  
+                </tr>
+                <tr>
+                  <td>BT0208</td>
+                  <td>What Do You Call One Hundred and One Dragons? And Other Common Questions</td>
+                  
+                </tr>
+                <tr>
+                  <td>BT0101</td>
+                  <td>Communicating With Wild Creatures on an Emotional Level</td>
+                  
+                </tr>
+              </tbody>
+            </table>
+            <table>
+                <thead>
+                  <tr>
+                    <th colspan="2">Pillar 2 - Wonders of Modern <font color="red">Tech</font></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Code</td>
+                    <td>Module Name</td>
+                    
+                  </tr>
+                  <tr>
+                    <td>MT1104</td>
+                    <td>Introduction to Electricity: Lightning at Your Fingertips</td>
+                    
+                  </tr>
+                  <tr>
+                    <td>MT1820</td>
+                    <td>Unsurprisingly, Climate Change is Not a Wonder</td>
+                    
+                  </tr>
+                  <tr>
+                    <td>MT2317</td>
+                    <td>Telephones: The End of Owls as Messengers?</td>
+                    
+                  </tr>
+                </tbody>
+              </table>
+              <table>
+                <thead>
+                  <tr>
+                    <th colspan="2">Pillar 3 - The Meaning of <font color="red">Life</font> and Magic</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Code</td>
+                    <td>Module Name</td>
+                    
+                  </tr>
+                  <tr>
+                    <td>LM0507</td>
+                    <td>The Pledge, The Turn, and The Prestige</td>
+                    
+                  </tr>
+                  <tr>
+                    <td>LM1302</td>
+                    <td>Mastering the 42 Spells and Completing the 42 Rituals</td>
+                    
+                  </tr>
+                  <tr>
+                    <td>LM0109</td>
+                    <td>The Ultimate Status Symbol: Organising a Chilli Feast</td>
+                    
+                  </tr>
+                </tbody>
+              </table>
+              <table>
+                <thead>
+                  <tr>
+                    <th colspan="2">Pillar 4 - The Wizards' <font color="red">Code</font></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Code</td>
+                    <td>Module Name</td>
+                    
+                  </tr>
+                  <tr>
+                    <td>WC1506</td>
+                    <td>Apparating into Outer Space and Other Hazards</td>
+                    
+                  </tr>
+                  <tr>
+                    <td>WC1404</td>
+                    <td>Audio, Video, Disco: Deciphering Latin Scripts</td>
+                    
+                  </tr>
+                  <tr>
+                    <td>WC1303</td>
+                    <td>Maintaining Secrecy with Concealment Charms</td>
+                    
+                  </tr>
+                </tbody>
+              </table>
+              <table>
+                <thead>
+                  <tr>
+                    <th colspan="2">Pillar 5 - Respect and <font color="red">Consent</font></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Code</td>
+                    <td>Module Name</td>
+                    
+                  </tr>
+                  <tr>
+                    <td>RC0404</td>
+                    <td>Ethical Use of Love Potions</td>
+                    
+                  </tr>
+                  <tr>
+                    <td>RC0203</td>
+                    <td>No, Silencio Does Not Give You Permission</td>
+                    
+                  </tr>
+                  <tr>
+                    <td>RC0501</td>
+                    <td>Emoticon Sentiment: the Nuances of Virtual Affection</td>
+                    
+                  </tr>
+                </tbody>
+              </table>
+              <table>
+                <thead>
+                  <tr>
+                    <th colspan="2">Pillar 6 - <font color="red">Wand</font> Theory </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Code</td>
+                    <td>Module Name</td>
+                    
+                  </tr>
+                  <tr>
+                    <td>WT2008</td>
+                    <td>Show and Tell: Non-Verbal Spell Casting</td>
+                    
+                  </tr>
+                  <tr>
+                    <td>WT2010</td>
+                    <td>Expelliarmus: What Can't It Do?</td>
+                    
+                  </tr>
+                  <tr>
+                    <td>WT2109</td>
+                    <td>Picking the Right Wood and Core</td>
+                    
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+</div>
+</body>
+</html>

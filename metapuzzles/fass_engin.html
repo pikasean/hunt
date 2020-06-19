@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Faculty of Arts and Social Sciences/Faculty of Engineering (Remus)</title>  
+
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1200, initial-scale=0">
+    <meta name="google" content="notranslate">
+      
+    <!-- Sources -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>  
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/hunt.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/puzzle.js"></script>
+    
+    
+    <link rel="stylesheet" href="../assets/css/bootstrap-reduced.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/puzzle.css">
+    <link rel="stylesheet" href="../assets/css/metapuzzle.css">
+    <link rel="stylesheet" href="../assets/css/backgrounds/general.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">  
+    
+    <!-- Icons and Styles -->
+    <!-- Generics -->
+    <link rel="icon" href="../assets/icons/favicon-32.png" sizes="32x32" />
+    <link rel="icon" href="../assets/icons/favicon-96.png" sizes="96x96" />
+    <link rel="icon" href="../assets/icons/favicon-128.png" sizes="128x128" />
+    <link rel="icon" href="../assets/icons/favicon-192.png" sizes="192x192" />
+    <!-- Android -->
+    <link rel="shortcut icon" href="../assets/icons/favicon-196.png" sizes="196x196" />
+    <!-- iOS -->
+    <link rel="apple-touch-icon" href="../assets/icons/favicon-120.png" sizes="120x120" />
+    <link rel="apple-touch-icon" href="../assets/icons/favicon-152.png" sizes="152x152" />
+    <link rel="apple-touch-icon" href="../assets/icons/favicon-167.png" sizes="167x167" />
+    <link rel="apple-touch-icon" href="../assets/icons/favicon-180.png" sizes="180x180" />
+    <!-- iOS icon title -->
+    <meta name="apple-mobile-web-app-title" content="UFO15" />
+
+    <style>
+      .tooltip-title {
+          font-family: CrimsonText-Regular, serif;
+          font-size: 15px;
+          text-align: center;
+      }
+      #header-change-contact-info .modal-header-text {
+          font-size: 30px;
+          font-family: BlackBeard,sans-serif;
+      }
+      #header-change-contact-info input {
+          font-family: CrimsonText-Regular,serif;
+          font-size: 22px;
+          line-height: 29px;
+      }
+    </style>
+  <!-- Fill in appropriate puzzle content styles -->
+  <style>
+      .puzzle-content .s {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: flex-end;
+    }
+    .puzzle-content .g {
+      border-collapse: collapse;
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .puzzle-content .c {
+      font-family: cursive;
+      width: 32px;
+      height: 32px;
+    }
+    .puzzle-content .tbs {
+      border-top: 2px solid black;
+    }
+    .puzzle-content .rbs {
+      border-right: 2px solid black;
+    }
+    .puzzle-content .bbs {
+      border-bottom: 2px solid black;
+    }
+    .puzzle-content .lbs {
+      border-left: 2px solid black;
+    }
+    
+  </style>
+  </head>
+
+  <body>
+    <div class="fixed-header">
+      <div class="fixed-header-inner" id="header-bar">
+        <div class="header-links">
+          <div class="header-link"><a href="../map.html">Map</a></div>
+          <div class="header-link header-dropdown">
+            <div class="header-dropdown-title"><a href="fass_engin.html#"> Useful Links <span class="fas fa-caret-down"></span></a></div>
+            <div class="dropdown-content-wrapper">
+              <div class="dropdown-link"><a href="../guide.html">Guide</a></div>
+              <div class="dropdown-link"><a href="../puzzle.html">List of Puzzles</a></div>
+              <div class="dropdown-link"><a href="../errata.html">Errata</a></div>
+              <div class="dropdown-link"><a href="../faq.html">FAQs</a></div>
+              <div class="dropdown-link"><a href="../leaderboard.html">Leaderboard</a></div>
+              <div class="dropdown-link"><a href="../credits.html">Credits</a></div>  
+            </div>
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </div>
+
+    <div class="overall-layout-body">
+    
+          
+        <div class="puzzle-container unlocked">
+            <div id="header" class="puzzle-header">
+
+                <div class="name-container">
+                    <div class="name-items">
+                        <div class="problem-graphic-container">
+                            <img id="problem-graphic" src="../assets/images/wizards/remus.png"/></div>
+                        
+                        <div class="title-text">
+                            <div class="problem-holiday"><a href="../faculties/fass.html">Faculty of Arts and Social Sciences</a></div>
+                            <div class="problem-holiday"><a href="../faculties/engin.html">Faculty of Engineering</a></div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        
+
+
+        <div id="puzzle" class="puzzle">
+
+            <div id="flavor" class="flavor">
+                Remus the wizard wants to brew a potion, but he’s having trouble getting that one last ingredient. 
+                Since he is part-werewolf, whenever he goes on a search, he must turn away when a full moon appears. 
+                When he does, he loses sight of the ingredient after a few steps, 
+                so he turns and continues forward on his journey, 
+                but another full moon always shows up without fail (This reality has absurdly many moons). 
+                This process repeats, and perplexingly enough, Remus ends up where he started after a full search. 
+                Alas, full moons are indeed not Remus’ best friend, crescent moons are. 
+                You intend to help him with his search. What is the last ingredient?
+            </div>
+
+            <div class="puzzle-content">
+                <div class="s">
+                    <table class="g">
+                      
+                      
+                      <tr>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>  
+                      </tr>
+                      <tr>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>  
+                      </tr>
+                      <tr>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>  
+                      </tr>
+                      <tr>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>  
+                      </tr>
+                      <tr>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>  
+                      </tr>
+                      <tr>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>
+                        <td class="bbs rbs tbs lbs c"></td>  
+                      </tr>
+                      
+                    </table>
+
+            </div>
+
+
+            <div id="call-to-action" class="call-to-action">
+                To solve this metapuzzle, you will need 3 answers from the Faculty of Arts and Social Sciences, and 3 answers from the Faculty of Engineering.
+                No answer is used in more than one metapuzzle.
+            </div>
+
+        </div>
+
+
+        </div>
+      
+    </div>
+  </body>
+</html>
