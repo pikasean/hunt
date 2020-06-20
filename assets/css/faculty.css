@@ -49,7 +49,7 @@ div#puzzle-list div.puzzle-entry {
     font-size: 36px;
     font-family: BlackBeard;
     line-height: 1em;
-    margin-bottom: .5em
+    margin-bottom: 1em
 }
 
 div#puzzle-list div.puzzle-entry div.puzzle-solution {
@@ -139,5 +139,5 @@ div#problem-list a:hover {
 
 div#problem-list div.problem-entries div.problem-entry span.problem-badge img.problem-badge-image {
     padding-left: 12px;
-    height: 22px
+    height: 30px
 }
