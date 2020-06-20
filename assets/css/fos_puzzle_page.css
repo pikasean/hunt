@@ -1,0 +1,9 @@
+.puzzle-header .header-anchor-graphic img {
+    max-height: 190px;
+    margin: 0 0 0 -30px
+}
+
+.puzzle-header .header-textual-data .town-name img {
+    max-height: 50px;
+    margin: 10px 0 0 -5px
+}
