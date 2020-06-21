@@ -20,7 +20,7 @@
         .then(data => {
           let txt = "<table><thead><tr><th>Name</th><th>Score</th><th>Ranking</th></tr></thead><tbody>"
           for (let og of data) {
-            txt += `<tr><td>${og.Name}</td><td>${og.Score}</td><td>${og.Ranking}</td></tr>`;
+            txt += `<tr><td>${og.name}</td><td>${og.score}</td><td>${og.ranking}</td></tr>`;
           }
           txt += "</tbody></table>"
           console.log(txt);
