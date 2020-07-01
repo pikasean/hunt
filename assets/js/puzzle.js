@@ -57,7 +57,7 @@ function showSubmit() {
     let welcomeDescription = group === null ? 'Welcome!' : `Welcome, ${group}!`;
     const htmlSubmit = `
         <div class="header-links">
-          <div id="check_answer" class="header-link"><a href="${puzzle}.html#" data-toggle="modal"
+          <div id="check_answer" class="header-link"><a href="${puzzle}.html#" data-toggle="modal" id="checkAnswerButton"
                                                     data-target="#checkAnswerModal">Submit Answer</a></div>
 <!--          <div id="submit" class="header-link"><a href="../solutions/${puzzle}.html">Solution</a></div>-->
           <div id="welcome" class="header-link"><a href="../leaderboard.html" >${welcomeDescription}</a></div>
@@ -101,6 +101,8 @@ function render() {
     clearBar();
     if (authToken() != null) {
         showSubmit();
+        document.querySelector('#checkAnswerButton')
+            .addEventListener('click', checkSubmitOrVoided)
         document.querySelector('#checkAnswerForm')
             .addEventListener('submit', submitAnswer);
         $('#checkAnswerModal')
@@ -126,6 +128,30 @@ function render() {
     }
 }
 
+
+function checkSubmitOrVoided(event) {
+    event.preventDefault()
+    let option = {
+        method: 'GET',
+        body: JSON.stringify({ name: groupName() }),
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authToken()}`,
+        }
+    }
+    let puzzleId = $('#checkAnswerModal').attr('data-puzzle-id')
+    fetch(`https://nusmsl.com/api/solves/${puzzleId}`, option)
+        .then((res) => res.json())
+        .then((data) => {
+            if (data.solve === 'true') {
+                // fill in your code here...
+            } else if (data.void === 'true') {
+                // fill in your code here...
+            }
+        })
+}
+
 /// Submit event for login
 // Send login data to /api/login and receive a JWT token, which we store in sessionStorage.
 function loginCredentials(event) {
@@ -146,16 +172,23 @@ function loginCredentials(event) {
     };
     resetModal();
     $('#loginForm button').prop('disabled', true);
-    fetch('https://nusmsl.com/api/login', option)
+    fetch('https://nusmsl.com/api/team', option)
         .then((res) => res.json())
         .then((data) => {
-            sessionStorage.setItem("token", data.token);
-            sessionStorage.setItem('groupName', teamName);
-            location.reload();
-            $('#loginForm button').prop('disabled', false);
+            if (data.message) {
+                let loginResult = document.getElementById('loginResult');
+                loginResult.textContent = 'Login failed.';
+                loginResult.classList.add('incorrect');
+                $('#loginForm button').prop('disabled', false);
+            } else {
+                sessionStorage.setItem("token", data.token);
+                sessionStorage.setItem('groupName', teamName);
+                location.reload();
+                $('#loginForm button').prop('disabled', false);// modify this to local storage
+            }
         })
         .catch((err) => {
-            console.log(err)
+            console.log(err);
             let loginResult = document.getElementById('loginResult');
             err.msg
                 ? loginResult.textContent = err.msg
@@ -168,11 +201,12 @@ function loginCredentials(event) {
 // Do answer check on front end and send puzzleName to /api/solve along with token.
 function submitAnswer(event) {
     event.preventDefault();
-    let answer = $('#checkAnswerForm input').val();
-    let puzzleId = $('#checkAnswerModal').attr('data-puzzle-id');
-    let team = groupName();
 
-    let data = { team, puzzleId, answer }
+    let data = {
+        name: groupName(),
+        puzzleId: $('#checkAnswerModal').attr('data-puzzle-id'),
+        answer: $('#checkAnswerForm input').val()
+    }
 
     resetModal();
     $('#checkAnswerForm button').prop('disabled', true);
@@ -187,7 +221,7 @@ function submitAnswer(event) {
         }
     }
 
-    fetch('https://nusmsl.com/api/solve', option)
+    fetch('https://nusmsl.com/api/solves', option)
         .then((res) => res.json())
         .then((data) => {
             if (data.solve === 'true') {

@@ -15,7 +15,7 @@
     <script src="assets/js/hunt.js"></script>
     <script src="assets/js/jquery-ui.min.js"></script>
     <script>
-      fetch('https://nusmsl.com/api/leaderboard')
+      fetch('https://nusmsl.com/api/team')
         .then(response => response.json()).then(x => {console.log(x); return x})
         .then(data => {
           let txt = "<table><thead><tr><th>Name</th><th>Score</th><th>Ranking</th></tr></thead><tbody>"
@@ -23,7 +23,6 @@
             txt += `<tr><td>${og.name}</td><td>${og.score}</td><td>${og.ranking}</td></tr>`;
           }
           txt += "</tbody></table>"
-          console.log(txt);
           document.getElementById("scoreboard").innerHTML = txt;
         });
     </script>
