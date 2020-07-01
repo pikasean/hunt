@@ -190,11 +190,11 @@ function submitAnswer(event) {
     fetch('https://nusmsl.com/api/solve', option)
         .then((res) => res.json())
         .then((data) => {
-            if (data.solve) {
+            if (data.solve === 'true') {
                 $('#checkAnswerResult')
                     .text('Correct!')
                     .addClass('correct');
-            } else {
+            } else if (data.solve === 'false') {
                 $('#checkAnswerResult')
                     .text('Incorrect.')
                     .addClass('incorrect');
