@@ -104,7 +104,7 @@ function render() {
         document.querySelector('#checkAnswerForm')
             .addEventListener('submit', submitAnswer);
         $('#checkAnswerModal')
-            .on('shown.bs.modal', function() {
+            .on('shown.bs.modal', function () {
                 console.log("FOCUSING")
                 $('#checkAnswerForm input').focus();
             })
@@ -116,7 +116,7 @@ function render() {
         document.querySelector('#loginForm')
             .addEventListener('submit', loginCredentials);
         $('#loginModal')
-            .on('shown.bs.modal', function() {
+            .on('shown.bs.modal', function () {
                 console.log("FOCUSING")
                 $('#checkAnswerForm input').focus();
             })
@@ -144,15 +144,15 @@ function loginCredentials(event) {
             'Content-Type': 'application/json'
         }
     };
-    console.log(data);
-    console.log(option);
     resetModal();
+    $('#loginForm button').prop('disabled', true);
     fetch('https://nusmsl.com/api/login', option)
         .then((res) => res.json())
         .then((data) => {
             sessionStorage.setItem("token", data.token);
             sessionStorage.setItem('groupName', teamName);
             location.reload();
+            $('#loginForm button').prop('disabled', false);
         })
         .catch((err) => {
             console.log(err)
@@ -161,6 +161,7 @@ function loginCredentials(event) {
                 ? loginResult.textContent = err.msg
                 : loginResult.textContent = 'Login failed.';
             loginResult.classList.add('incorrect');
+            $('#loginForm button').prop('disabled', false);
         })
 }
 /// Submit event for check answer
@@ -169,48 +170,39 @@ function submitAnswer(event) {
     event.preventDefault();
     let answer = $('#checkAnswerForm input').val();
     let puzzleId = $('#checkAnswerModal').attr('data-puzzle-id');
+    let team = groupName();
 
-    let result = checkAnswer(puzzleId, answer);
+    let data = { team, puzzleId, answer }
+
     resetModal();
+    $('#checkAnswerForm button').prop('disabled', true);
 
-    if (result.correct) {
-        let data = {
-            puzzleName: puzzleId // 'puzzle_12'
+    let option = {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authToken()}`,
         }
-        let option = {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${authToken()}`,
-            }
-        };
-        fetch('https://nusmsl.com/api/solve', option)
-            .then((res) => res.json())
-            .then((data) => {
-                if (data.solved === 'true') {
-                    $('#checkAnswerResult')
-                        .text('Your team has solved the puzzle.')
-                        .addClass('correct');
-                } else {
-                    $('#checkAnswerResult')
-                        .text('Correct!')
-                        .addClass('correct');
-                }
-            })
-            .catch((err) => {
-                console.log(err)
-            });
-    } else if (result.message) {
-        $('#checkAnswerResult')
-            .text(result.message)
-            .addClass('incorrect');
-    } else {
-        $('#checkAnswerResult')
-            .text('Incorrect.')
-            .addClass('incorrect');
     }
+
+    fetch('https://nusmsl.com/api/solve', option)
+        .then((res) => res.json())
+        .then((data) => {
+            if (data.solve) {
+                $('#checkAnswerResult')
+                    .text('Correct!')
+                    .addClass('correct');
+            } else {
+                $('#checkAnswerResult')
+                    .text('Incorrect.')
+                    .addClass('incorrect');
+            }
+            $('#checkAnswerForm button').prop('disabled', false);
+        }).catch((err) => {
+            console.log(err)
+        });
 }
 /// Remove token from sessionStorage and logout
 function logout(event) {
@@ -248,9 +240,11 @@ function signUp(event) {
 
 
 
-let answerHashCodes = {'12_pictures': 1805564616, 'alpha_helix': -719975452, 'are_you_satisfactory_enough': -18080859, 'basic': 956486952, 'biz_fos': 2086097974, 'biz_soc': 1951950692, 'broken_messages': 83934, 'cat_emojis': 122794406, 'cca_sharing': -665682260, 'central_library': 1299076926, 'character_double': 987737024, 'covid_19': 171806750, 'elementary': 65954, 'engin_yst': 1993440030, 'fass_engin': -1102720003, 'fass_soc': 2024518163, 'fos_yst': 1987167862, 'framing_differences': 1159194214, 'gee_square_pies': -435389283, 'helix': -1671081370, 'i_am_groot': -254552085, 'imdb': -108252542, 'it_all_adds_up': -1941910498, 'just_like_me': 416618591, 'leftover_dice': 1942336857, 'magiball': -1809054862, 'mala_stalls': 1560527756, 'malaysian_students_league': -996010050, 'mashup': 2020651482, 'modreg': 166265618, 'mountains_and_valleys': 88837, 'mr_lemons': 2336508, 'mrt_tracing': -1971285197, 'music_box': 1691559318, 'peaks': 67260617, 'polypotions': -105691978, 'punzle': 2022138428, 'puzzle_10': -362898206, 'qet_briefing': 1595145549, 'qet_marking': 2119594319, 'reddit': 68912562, 'safety_first': -340597151, 'solfa': 1721290109, 'special_characters': -60766767, 'the_club': 122240367, 'the_committee': -1011476439, 'the_heist': 472343990, 'the_traveller': 1032525434, 'things': 674396804, 'triangles_everywhere': 1263663902,'utown': 483966670,
-'waiting_for_d2': 1980522540,
-'what_does_the_owl_say': -1189163521};
+let answerHashCodes = {
+    '12_pictures': 1805564616, 'alpha_helix': -719975452, 'are_you_satisfactory_enough': -18080859, 'basic': 956486952, 'biz_fos': 2086097974, 'biz_soc': 1951950692, 'broken_messages': 83934, 'cat_emojis': 122794406, 'cca_sharing': -665682260, 'central_library': 1299076926, 'character_double': 987737024, 'covid_19': 171806750, 'elementary': 65954, 'engin_yst': 1993440030, 'fass_engin': -1102720003, 'fass_soc': 2024518163, 'fos_yst': 1987167862, 'framing_differences': 1159194214, 'gee_square_pies': -435389283, 'helix': -1671081370, 'i_am_groot': -254552085, 'imdb': -108252542, 'it_all_adds_up': -1941910498, 'just_like_me': 416618591, 'leftover_dice': 1942336857, 'magiball': -1809054862, 'mala_stalls': 1560527756, 'malaysian_students_league': -996010050, 'mashup': 2020651482, 'modreg': 166265618, 'mountains_and_valleys': 88837, 'mr_lemons': 2336508, 'mrt_tracing': -1971285197, 'music_box': 1691559318, 'peaks': 67260617, 'polypotions': -105691978, 'punzle': 2022138428, 'puzzle_10': -362898206, 'qet_briefing': 1595145549, 'qet_marking': 2119594319, 'reddit': 68912562, 'safety_first': -340597151, 'solfa': 1721290109, 'special_characters': -60766767, 'the_club': 122240367, 'the_committee': -1011476439, 'the_heist': 472343990, 'the_traveller': 1032525434, 'things': 674396804, 'triangles_everywhere': 1263663902, 'utown': 483966670,
+    'waiting_for_d2': 1980522540,
+    'what_does_the_owl_say': -1189163521
+};
 
 /// checkAnswer BlackBox (Not touching)
 function checkAnswer(puzzleId, submission) {
