@@ -72,7 +72,7 @@ function showSubmit() {
                   </button>
                   <span class="modal-title" id="checkAnswerModalLabel">Submit Answer</span>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" id="dialog_content">
                   <form id="checkAnswerForm" action="${puzzle}.html#">
                     <input type="text" placeholder="Enter answer here"/><br>
                     <button type="submit">Submit</button>
@@ -144,10 +144,12 @@ function checkSubmitOrVoided(event) {
     fetch(`https://nusmsl.com/api/solves/${puzzleId}`, option)
         .then((res) => res.json())
         .then((data) => {
-            if (data.solve === 'true') {
-                // fill in your code here...
-            } else if (data.void === 'true') {
-                // fill in your code here...
+            if (data.solve) {
+                document.getElementById("dialog_content").innerHTML =
+                    `You have solved this puzzle. The answer is ${data.answer}`
+            } else if (data.void) {
+                document.getElementById("dialog_content").innerHTML =
+                    `You have voided this puzzle. The answer is ${data.answer}`
             }
         })
 }
@@ -162,6 +164,8 @@ function loginCredentials(event) {
         team: teamName,
         password: password
     }
+    console.log(data)
+    console.log(JSON.stringify(data))
     let option = {
         method: 'POST',
         body: JSON.stringify(data),
