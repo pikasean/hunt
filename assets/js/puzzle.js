@@ -133,7 +133,7 @@ function checkSubmitOrVoided(event) {
     event.preventDefault()
     let option = {
         method: 'GET',
-        body: JSON.stringify({ name: groupName() }),
+        body: JSON.stringify({ team: groupName() }),
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
@@ -159,7 +159,7 @@ function loginCredentials(event) {
     let teamName = $("#loginForm input[type='text']").val();
     let password = $("#loginForm input[type='password']").val();
     let data = {
-        name: teamName,
+        team: teamName,
         password: password
     }
     let option = {
@@ -203,8 +203,7 @@ function submitAnswer(event) {
     event.preventDefault();
 
     let data = {
-        name: groupName(),
-        puzzleId: $('#checkAnswerModal').attr('data-puzzle-id'),
+        puzzle: $('#checkAnswerModal').attr('data-puzzle-id'),
         answer: $('#checkAnswerForm input').val()
     }
 
