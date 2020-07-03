@@ -1,7 +1,7 @@
 /// Retrieve token.
 // If token is present, we will render the submit page, else the login page.
-let authToken = () => sessionStorage.getItem('token');
-let groupName = () => sessionStorage.getItem('groupName');
+let authToken = () => localStorage.getItem('token');
+let groupName = () => localStorage.getItem('groupName');
 let puzzleName = () => window.location.href.split("/").slice(-1)[0].split(".")[0];
 
 /// Reset all input field.
@@ -155,7 +155,7 @@ function checkSubmitOrVoided(event) {
 }
 
 /// Submit event for login
-// Send login data to /api/login and receive a JWT token, which we store in sessionStorage.
+// Send login data to /api/login and receive a JWT token, which we store in localStorage.
 function loginCredentials(event) {
     event.preventDefault();
     let teamName = $("#loginForm input[type='text']").val();
@@ -183,8 +183,8 @@ function loginCredentials(event) {
                 loginResult.classList.add('incorrect');
                 $('#loginForm button').prop('disabled', false);
             } else {
-                sessionStorage.setItem("token", data.token);
-                sessionStorage.setItem('groupName', teamName);
+                localStorage.setItem("token", data.token);
+                localStorage.setItem('groupName', teamName);
                 location.reload();
                 $('#loginForm button').prop('disabled', false);// modify this to local storage
             }
@@ -239,10 +239,10 @@ function submitAnswer(event) {
             console.log(err)
         });
 }
-/// Remove token from sessionStorage and logout
+/// Remove token from localStorage and logout
 function logout(event) {
     event.preventDefault();
-    sessionStorage.removeItem('token');
+    localStorage.removeItem('token');
     location.reload();
 }
 /// SignUp to be implemented
