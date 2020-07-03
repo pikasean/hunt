@@ -145,10 +145,10 @@ function checkSubmitOrVoided(event) {
         .then((data) => {
             if (data.solve) {
                 document.getElementById("dialog_content").innerHTML =
-                    `You have solved this puzzle. The answer is ${data.answer}`
+                    `You have solved this puzzle. The answer is \"${data.answer}\".`
             } else if (data.void) {
                 document.getElementById("dialog_content").innerHTML =
-                    `You have voided this puzzle. The answer is ${data.answer}`
+                    `You have voided this puzzle. The answer is \"${data.answer}\".`
             }
         })
 }
@@ -224,16 +224,16 @@ function submitAnswer(event) {
     fetch('https://nusmsl.com/api/solves', option)
         .then((res) => res.json())
         .then((data) => {
-            if (data.solve === 'true') {
+            if (data.solve) {
                 $('#checkAnswerResult')
                     .text('Correct!')
                     .addClass('correct');
-            } else if (data.solve === 'false') {
+            } else {
                 $('#checkAnswerResult')
                     .text('Incorrect.')
                     .addClass('incorrect');
+                $('#checkAnswerForm button').prop('disabled', false);
             }
-            $('#checkAnswerForm button').prop('disabled', false);
         }).catch((err) => {
             console.log(err)
         });
