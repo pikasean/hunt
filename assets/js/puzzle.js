@@ -144,6 +144,7 @@ function checkSubmitOrVoided(event) {
                 document.getElementById("dialog_content").innerHTML =
                     `You have voided this puzzle. The answer is \"${data.answer}\".`
             } else {
+                let puzzle = puzzleName();
                 document.getElementById("dialog_content").innerHTML =
                     `<form id="checkAnswerForm" action="${puzzle}.html#">
                         <input type="text" placeholder="Enter answer here"/><br>
