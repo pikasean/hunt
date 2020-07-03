@@ -164,8 +164,6 @@ function loginCredentials(event) {
         team: teamName,
         password: password
     }
-    console.log(data)
-    console.log(JSON.stringify(data))
     let option = {
         method: 'POST',
         body: JSON.stringify(data),
