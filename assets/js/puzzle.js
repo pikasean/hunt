@@ -133,7 +133,6 @@ function checkSubmitOrVoided(event) {
     event.preventDefault()
     let option = {
         method: 'GET',
-        body: JSON.stringify({ team: groupName() }),
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
