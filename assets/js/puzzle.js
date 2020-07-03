@@ -73,6 +73,12 @@ function showSubmit() {
                   <span class="modal-title" id="checkAnswerModalLabel">Submit Answer</span>
                 </div>
                 <div class="modal-body" id="dialog_content">
+                <form id="checkAnswerForm" action="${puzzle}.html#">
+                    <input type="text" placeholder="Enter answer here"/><br>
+                    <button type="submit">Submit</button>
+                </form>
+                <div id="checkAnswerResult">
+                </div>
                 </div>
               </div>
             </div>
@@ -143,15 +149,6 @@ function checkSubmitOrVoided(event) {
             } else if (data.void) {
                 document.getElementById("dialog_content").innerHTML =
                     `You have voided this puzzle. The answer is \"${data.answer}\".`
-            } else {
-                let puzzle = puzzleName();
-                document.getElementById("dialog_content").innerHTML =
-                    `<form id="checkAnswerForm" action="${puzzle}.html#">
-                        <input type="text" placeholder="Enter answer here"/><br>
-                        <button type="submit">Submit</button>
-                    </form>
-                    <div id="checkAnswerResult">
-                    </div>`
             }
         })
 }
