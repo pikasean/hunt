@@ -157,9 +157,9 @@ function renderOnSubmitOrVoided(event) {
 }
 
 function printLengthHint(arrNum) {
-    let result = ''
+    let result = '&nbsp;&nbsp;Answer: '
     // This line apparently does not work with older browsers, but heh
-    arrNum.forEach((ele) => { result += '_ '.repeat(ele) + '   ' })
+    arrNum.forEach((ele) => { result += '_ '.repeat(ele) + '&nbsp;&nbsp;&nbsp;' })
     return result.substr(0, result.length - 3)
 }
 
