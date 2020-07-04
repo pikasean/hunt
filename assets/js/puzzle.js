@@ -157,10 +157,10 @@ function renderOnSubmitOrVoided(event) {
 }
 
 function printLengthHint(arrNum) {
-    let result = '&nbsp;&nbsp;Answer: '
+    let result = 'Answer: '
     // This line apparently does not work with older browsers, but heh
     arrNum.forEach((ele) => { result += '_ '.repeat(ele) + '&nbsp;&nbsp;&nbsp;' })
-    return result.substr(0, result.length - 3)
+    return result.substr(0, result.length - 18)
 }
 
 /// Submit event for login
