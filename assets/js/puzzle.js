@@ -73,6 +73,7 @@ function showSubmit() {
                   <span class="modal-title" id="checkAnswerModalLabel">Submit Answer</span>
                 </div>
                 <div class="modal-body" id="dialog_content">
+                <div id="lengthHint"></div>
                 <form id="checkAnswerForm" action="${puzzle}.html#">
                     <input type="text" placeholder="Enter answer here"/><br>
                     <button type="submit">Submit</button>
@@ -102,7 +103,7 @@ function render() {
     if (authToken() != null) {
         showSubmit();
         document.querySelector('#checkAnswerButton')
-            .addEventListener('click', checkSubmitOrVoided)
+            .addEventListener('click', renderOnSubmitOrVoided)
         document.querySelector('#checkAnswerForm')
             .addEventListener('submit', submitAnswer);
         $('#checkAnswerModal')
@@ -129,7 +130,7 @@ function render() {
 }
 
 
-function checkSubmitOrVoided(event) {
+function renderOnSubmitOrVoided(event) {
     event.preventDefault()
     let option = {
         method: 'GET',
@@ -149,8 +150,17 @@ function checkSubmitOrVoided(event) {
             } else if (data.void) {
                 document.getElementById("dialog_content").innerHTML =
                     `You have voided this puzzle. The answer is \"${data.answer}\".`
+            } else {
+                document.getElementById("lengthHint").innerHTML = printLengthHint(data.hint)
             }
         })
+}
+
+function printLengthHint(arrNum) {
+    let result = ''
+    // This line apparently does not work with older browsers, but heh
+    arrNum.forEach((ele) => { result += '_ '.repeat(ele) + '   ' })
+    return result.substr(0, result.length - 3)
 }
 
 /// Submit event for login
