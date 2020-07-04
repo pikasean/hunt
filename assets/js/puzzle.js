@@ -73,7 +73,7 @@ function showSubmit() {
                   <span class="modal-title" id="checkAnswerModalLabel">Submit Answer</span>
                 </div>
                 <div class="modal-body" id="dialog_content">
-                <div id="lengthHint"></div>
+                <div id="lengthHint" style="margin-bottom: 10px"></div>
                 <form id="checkAnswerForm" action="${puzzle}.html#">
                     <input type="text" placeholder="Enter answer here"/><br>
                     <button type="submit">Submit</button>
