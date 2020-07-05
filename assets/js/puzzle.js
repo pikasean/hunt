@@ -60,7 +60,7 @@ function showSubmit() {
           <div id="check_answer" class="header-link"><a href="${puzzle}.html#" data-toggle="modal" id="checkAnswerButton"
                                                     data-target="#checkAnswerModal">Submit Answer</a></div>
 <!--          <div id="submit" class="header-link"><a href="../solutions/${puzzle}.html">Solution</a></div>-->
-          <div id="welcome" class="header-dropdown-title">${welcomeDescription}<span class="fas fa-caret-down"></span></div>
+          <div id="welcome" class="header-dropdown-title"><a href="${puzzle}.html#">${welcomeDescription}<span class="fas fa-caret-down"></span></a></div>
             <div class="dropdown-content-wrapper">
                 <div class="dropdown-link" id="logout">
                     Logout
