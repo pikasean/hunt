@@ -158,10 +158,10 @@ function renderOnSubmitOrVoided(event) {
         .then((data) => {
             if (data.solve) {
                 document.getElementById("dialog_content").innerHTML =
-                    `You have solved this puzzle. The answer is \"${data.answer}\".`
+                    `Your team has solved this puzzle. The answer is \"${data.answer}\".`
             } else if (data.void) {
                 document.getElementById("dialog_content").innerHTML =
-                    `You have voided this puzzle. The answer is \"${data.answer}\".`
+                    `Your team has voided this puzzle. The answer is \"${data.answer}\".`
             } else {
                 document.getElementById("lengthHint").innerHTML = printLengthHint(data.hint)
             }
