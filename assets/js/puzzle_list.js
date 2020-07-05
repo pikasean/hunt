@@ -35,12 +35,28 @@ function renderTeamProgress() {
         }
     }
 
+    function displayPuzzleScore(puzzle_id, score) {
+        const puzzle = document.getElementById(puzzle_id);
+        const span = document.createElement('span');
+        span.innerText = `[${score}pts]`;
+        span.style.fontFamily = 'monospace';
+        span.style.fontSize = 'large';
+        puzzle.firstElementChild.insertAdjacentElement('afterend', span);
+    }
+
     fetch('https://nusmsl.com/api/solves', option)
         .then((res) => res.json())
         .then((data) => {
             const {progress} = data;
             for (const {puzzle_id, state} of progress) {
                 displayPuzzleSolvedOrVoided(puzzle_id, state);
+            }
+        })
+    fetch('https://nusmsl.com/api/puzzle', option)
+        .then((res) => res.json())
+        .then((data) => {
+            for (const {puzzle_id, score} of data) {
+                displayPuzzleScore(puzzle_id, score);
             }
         })
 }
