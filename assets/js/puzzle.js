@@ -63,7 +63,7 @@ function showSubmit() {
                 <div class="header-link header-dropdown">          
                     <div id="welcome" class="header-dropdown-title"><a href="${puzzle}.html#">${welcomeDescription}<span class="fas fa-caret-down"></span></a></div>
                         <div class="dropdown-content-wrapper">
-                            <div class="dropdown-link"><a id="logout" href="${puzzle}.html#">Logout</a></div>
+                            <div class="dropdown-link"><a id="logout">Logout</a></div>
                         </div>
                     </div>
                 </div>
