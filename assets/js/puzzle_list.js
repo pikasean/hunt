@@ -14,13 +14,17 @@ function renderTeamProgress() {
     }
 
     function displayPuzzleSolvedOrVoided(puzzle_id, state) {
-        // TODO (SEAN): toggle solved or void logo
         // state === 'V' or 'S'
-        const puzzle = document.getElementById(`#${puzzle_id}`);
+        const puzzle = document.getElementById(puzzle_id);
+        const span = puzzle.firstElementChild;
+        const img = span.firstElementChild;
+
         if (state === 'V') {
-            // display void
+            img.src = 'assets/icons/voided.png';
+            img.style.opacity = "1";
         } else if (state === 'S') {
-            // display tick
+            img.src = 'assets/icons/solved.png';
+            img.style.opacity = "1";
         }
     }
 
