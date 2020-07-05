@@ -3,6 +3,13 @@
 let authToken = () => localStorage.getItem('token');
 let groupName = () => localStorage.getItem('groupName');
 
+/// Reset all input field.
+// Reset when press submit and close window.
+function resetModal() {
+    $('#loginForm input').val('');
+    $('#loginResult').empty().removeClass('correct').removeClass('incorrect');
+}
+
 function renderTeamProgress() {
     let option = {
         method: 'GET',
@@ -99,12 +106,6 @@ function showWelcome() {
 /// Submit event for login
 // Send login data to /api/login and receive a JWT token, which we store in localStorage.
 function renderLoginOrWelcome() {
-    /// Reset all input field.
-    // Reset when press submit and close window.
-    function resetModal() {
-        $('#loginForm input').val('');
-        $('#loginResult').empty().removeClass('correct').removeClass('incorrect');
-    }
     function clearBar() {
         let headerBar = document.querySelector("#header-bar");
         for (let i = 0; i < headerBar.childElementCount - 1; i++) {
