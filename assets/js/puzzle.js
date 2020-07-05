@@ -141,6 +141,45 @@ function render() {
     }
 }
 
+function renderScore() {
+// <div id="score">
+//         <span style="font-family: BlackBeard, sans-serif; font-size: 28px">Score: </span>
+//     <span style="font-family: CrimsonText-Regular, serif; font-size: 27px">10pts</span>
+//     </div>
+    let option = {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        }
+    }
+
+    function displayPuzzleScore(scoreNumber) {
+        const puzzle = document.getElementById('puzzle');
+        const score = document.createElement('div');
+        const scoreLabel = document.createElement('span');
+        const scoreValue = document.createElement('span');
+
+        scoreLabel.style.fontFamily = 'BlackBeard, sans-serif';
+        scoreLabel.style.fontSize = '28px';
+        scoreValue.style.fontFamily = 'CrimsonText-Regular, serif';
+        scoreValue.style.fontSize = '27px';
+
+        scoreLabel.innerText = 'Score: ';
+        scoreValue.innerText = `${scoreNumber}pts`;
+
+        score.appendChild(scoreLabel);
+        score.appendChild(scoreValue);
+
+        puzzle.prepend(score);
+    }
+
+    fetch(`https://nusmsl.com/api/puzzle/${puzzleName()}`, option)
+        .then((res) => res.json())
+        .then((score) => {
+            displayPuzzleScore(score);
+        });
+}
 
 function renderOnSubmitOrVoided(event) {
     event.preventDefault()
