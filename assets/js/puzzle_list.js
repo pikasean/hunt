@@ -39,7 +39,7 @@ function renderTeamProgress() {
 }
 
 /// HTML for login
-function showLogin() {
+function showLoginList() {
     const htmlLogin = `
         <div class="header-links">
           <div id="login" class="header-link">
@@ -80,12 +80,17 @@ function showWelcome() {
     let welcomeDescription = group === null ? 'Welcome!' : `Welcome, ${group}!`;
     const htmlSubmit = `
         <div class="header-links">
-          <div id="welcome" class="header-dropdown-title"><a href="puzzle.html#">${welcomeDescription}<span class="fas fa-caret-down"></span></a></div>
-            <div class="dropdown-content-wrapper">
-                <div class="dropdown-link" id="logout">
-                    Logout
+          <div id="check_answer" class="header-link"><a href="puzzle.html#" data-toggle="modal" id="checkAnswerButton"
+                                                    data-target="#checkAnswerModal">Submit Answer</a></div>
+<!--          <div id="submit" class="header-link"><a href="../solutions/puzzle.html">Solution</a></div>-->
+                <div class="header-link header-dropdown">
+                    <div id="welcome" class="header-dropdown-title">
+                        <a>${welcomeDescription}<span class="fas fa-caret-down"></span></a>
+                    </div>
+                    <div class="dropdown-content-wrapper">
+                        <div class="dropdown-link"><a id="logout">Logout</a></div>
+                    </div>
                 </div>
-            </div>
         </div>`
     let div = document.createElement('div');
     let headerBar = document.querySelector("#header-bar");
@@ -96,6 +101,12 @@ function showWelcome() {
 /// Submit event for login
 // Send login data to /api/login and receive a JWT token, which we store in localStorage.
 function renderLoginOrWelcome() {
+    /// Reset all input field.
+    // Reset when press submit and close window.
+    function resetModal() {
+        $('#loginForm input').val('');
+        $('#loginResult').empty().removeClass('correct').removeClass('incorrect');
+    }
     function clearBar() {
         let headerBar = document.querySelector("#header-bar");
         for (let i = 0; i < headerBar.childElementCount - 1; i++) {
@@ -108,7 +119,7 @@ function renderLoginOrWelcome() {
         document.querySelector('#logout')
             .addEventListener('click', logout);
     } else {
-        showLogin();
+        showLoginList();
         document.querySelector('#loginForm')
             .addEventListener('submit', loginCredentials);
         $('#loginModal')
@@ -122,6 +133,8 @@ function renderLoginOrWelcome() {
     }
 }
 
+/// Submit event for login
+// Send login data to /api/login and receive a JWT token, which we store in localStorage.
 function loginCredentials(event) {
     event.preventDefault();
     let teamName = $("#loginForm input[type='text']").val();
@@ -202,7 +215,7 @@ function signUp(event) {
 
 document.onreadystatechange = function () {
     if (document.readyState === "interactive") {
-        renderTeamProgress(); // entry point
         renderLoginOrWelcome();
+        if (authToken()) renderTeamProgress();
     }
 }
