@@ -35,30 +35,52 @@ function renderTeamProgress() {
         }
     }
 
-    function displayPuzzleScore(puzzle_id, score) {
-        const puzzle = document.getElementById(puzzle_id);
-        const span = document.createElement('span');
-        span.innerText = `[${score}pts]`;
-        span.style.fontFamily = 'monospace';
-        span.style.fontSize = 'large';
-        puzzle.firstElementChild.insertAdjacentElement('afterend', span);
+    function displayTeamScore(score) {
+        const teamScore = document.getElementById('team_score');
+        const scoreText = teamScore.lastElementChild;
+        teamScore.hidden = false;
+        scoreText.style.fontSize= '28px';
+        scoreText.innerText = `${score}pts`;
     }
 
     fetch('https://nusmsl.com/api/solves', option)
         .then((res) => res.json())
         .then((data) => {
-            const {progress} = data;
+            const {progress, score} = data;
+
+            displayTeamScore(score);
             for (const {puzzle_id, state} of progress) {
                 displayPuzzleSolvedOrVoided(puzzle_id, state);
             }
-        })
+        });
+}
+
+function renderScoreWeightage() {
+    let option = {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authToken()}`,
+        }
+    }
+
+    function displayPuzzleScore(puzzle_id, score) {
+        const puzzle = document.getElementById(puzzle_id);
+        const span = document.createElement('span');
+        span.innerText = ` [${score}pts]`;
+        span.style.fontFamily = 'monospace';
+        span.style.fontSize = 'large';
+        puzzle.firstElementChild.insertAdjacentElement('afterend', span);
+    }
+
     fetch('https://nusmsl.com/api/puzzle', option)
         .then((res) => res.json())
         .then((data) => {
             for (const {puzzle_id, score} of data) {
                 displayPuzzleScore(puzzle_id, score);
             }
-        })
+        });
 }
 
 /// HTML for login
@@ -231,6 +253,7 @@ function signUp(event) {
 document.onreadystatechange = function () {
     if (document.readyState === "interactive") {
         renderLoginOrWelcome();
+        renderScoreWeightage();
         if (authToken()) renderTeamProgress();
     }
 }
