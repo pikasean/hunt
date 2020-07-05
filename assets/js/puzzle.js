@@ -220,8 +220,8 @@ function voidPuzzle(event) {
         puzzle: $('#checkAnswerModal').attr('data-puzzle-id')
     };
 
-    $('submit').prop('disabled', true)
-    // disable void button here thx (literally just copy code)
+    $('#submit').prop('disabled', true)
+    $('#void').prop('disabled', true)
 
     let option = {
         method: 'POST',
@@ -238,7 +238,11 @@ function voidPuzzle(event) {
         .then((data)=>{
             $('#checkAnswerResult')
                 .text(`You have voided this puzzle. The answer is \"${data.answer}\".`)
-        })
+        }).catch((err)=>{
+            console.log(err);
+            $('#submit').prop('disabled', false)
+            $('#void').prop('disabled', false)
+        });
 }
 
 /// Submit event for check answer
