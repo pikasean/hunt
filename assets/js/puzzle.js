@@ -60,7 +60,12 @@ function showSubmit() {
           <div id="check_answer" class="header-link"><a href="${puzzle}.html#" data-toggle="modal" id="checkAnswerButton"
                                                     data-target="#checkAnswerModal">Submit Answer</a></div>
 <!--          <div id="submit" class="header-link"><a href="../solutions/${puzzle}.html">Solution</a></div>-->
-          <div id="welcome" class="header-link"><a href="../leaderboard.html" >${welcomeDescription}</a></div>
+          <div id="welcome" class="header-dropdown-title"><a href="${puzzle}.html#">${welcomeDescription}<span class="fas fa-caret-down"></span></a></div>
+            <div class="dropdown-content-wrapper">
+                <div class="dropdown-link" id="logout">
+                    Logout
+                </div>
+            </div>
           
 
           <div class="modal fade" id="checkAnswerModal" tabindex="-1" role="dialog" aria-labelledby="checkAnswerModalLabel"
@@ -73,12 +78,14 @@ function showSubmit() {
                   <span class="modal-title" id="checkAnswerModalLabel">Submit Answer</span>
                 </div>
                 <div class="modal-body" id="dialog_content">
-                  <form id="checkAnswerForm" action="${puzzle}.html#">
+                <div id="lengthHint" style="margin-bottom: 10px"></div>
+                <form id="checkAnswerForm" action="${puzzle}.html#">
                     <input type="text" placeholder="Enter answer here"/><br>
-                    <button type="submit">Submit</button>
-                  </form>
-                  <div id="checkAnswerResult">
-                  </div>
+                    <button id="submit" type="submit">Submit</button>
+                    <button id="void">Void</button>
+                </form>
+                <div id="checkAnswerResult">
+                </div>
                 </div>
               </div>
             </div>
@@ -102,9 +109,13 @@ function render() {
     if (authToken() != null) {
         showSubmit();
         document.querySelector('#checkAnswerButton')
-            .addEventListener('click', checkSubmitOrVoided)
+            .addEventListener('click', renderOnSubmitOrVoided)
         document.querySelector('#checkAnswerForm')
             .addEventListener('submit', submitAnswer);
+        document.querySelector('#void')
+            .addEventListener('click', voidPuzzle);
+        document.querySelector('#logout')
+            .addEventListener('click', logout);
         $('#checkAnswerModal')
             .on('shown.bs.modal', function () {
                 console.log("FOCUSING")
@@ -129,7 +140,7 @@ function render() {
 }
 
 
-function checkSubmitOrVoided(event) {
+function renderOnSubmitOrVoided(event) {
     event.preventDefault()
     let option = {
         method: 'GET',
@@ -149,8 +160,17 @@ function checkSubmitOrVoided(event) {
             } else if (data.void) {
                 document.getElementById("dialog_content").innerHTML =
                     `You have voided this puzzle. The answer is \"${data.answer}\".`
+            } else {
+                document.getElementById("lengthHint").innerHTML = printLengthHint(data.hint)
             }
         })
+}
+
+function printLengthHint(arrNum) {
+    let result = 'Answer: '
+    // This line apparently does not work with older browsers, but heh
+    arrNum.forEach((ele) => { result += '_ '.repeat(ele) + '&nbsp;&nbsp;&nbsp;' })
+    return result.substr(0, result.length - 18)
 }
 
 /// Submit event for login
@@ -185,7 +205,7 @@ function loginCredentials(event) {
                 localStorage.setItem("token", data.token);
                 localStorage.setItem('groupName', teamName);
                 location.reload();
-                $('#loginForm button').prop('disabled', false);// modify this to local storage
+                $('#loginForm button').prop('disabled', false);
             }
         })
         .catch((err) => {
@@ -198,18 +218,51 @@ function loginCredentials(event) {
             $('#loginForm button').prop('disabled', false);
         })
 }
+
+function voidPuzzle(event) {
+    event.preventDefault();
+
+    let data = {
+        team: groupName(),
+        puzzle: $('#checkAnswerModal').attr('data-puzzle-id')
+    };
+
+    $('#submit').prop('disabled', true)
+    $('#void').prop('disabled', true)
+
+    let option = {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authToken()}`,
+        }
+    }
+
+    fetch('https://nusmsl.com/api/puzzle/void', option)
+        .then((res)=>res.json())
+        .then((data)=>{
+            $('#checkAnswerResult')
+                .text(`You have voided this puzzle. The answer is \"${data.answer}\".`)
+        }).catch((err)=>{
+            console.log(err);
+            $('#submit').prop('disabled', false)
+            $('#void').prop('disabled', false)
+        });
+}
+
 /// Submit event for check answer
-// Do answer check on front end and send puzzleName to /api/solve along with token.
 function submitAnswer(event) {
     event.preventDefault();
 
     let data = {
         puzzle: $('#checkAnswerModal').attr('data-puzzle-id'),
         answer: $('#checkAnswerForm input').val()
-    }
+    };
 
     resetModal();
-    $('#checkAnswerForm button').prop('disabled', true);
+    $('#submit').prop('disabled', true);
 
     let option = {
         method: 'POST',
@@ -232,7 +285,7 @@ function submitAnswer(event) {
                 $('#checkAnswerResult')
                     .text('Incorrect.')
                     .addClass('incorrect');
-                $('#checkAnswerForm button').prop('disabled', false);
+                $('#submit').prop('disabled', false);
             }
         }).catch((err) => {
             console.log(err)
