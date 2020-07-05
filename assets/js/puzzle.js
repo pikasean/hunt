@@ -61,10 +61,11 @@ function showSubmit() {
                                                     data-target="#checkAnswerModal">Submit Answer</a></div>
 <!--          <div id="submit" class="header-link"><a href="../solutions/${puzzle}.html">Solution</a></div>-->
                 <div class="header-link header-dropdown">
-                    <div id="welcome" class="header-dropdown-title"><a>${welcomeDescription}<span class="fas fa-caret-down"></span></a></div>
-                        <div class="dropdown-content-wrapper">
-                            <div class="dropdown-link">Logout</div>
-                        </div>
+                    <div id="welcome" class="header-dropdown-title">
+                        <a>${welcomeDescription}<span class="fas fa-caret-down"></span></a>
+                    </div>
+                    <div class="dropdown-content-wrapper">
+                        <div class="dropdown-link"><a id="logout">Logout</a></div>
                     </div>
                 </div>
           
