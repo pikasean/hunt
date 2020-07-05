@@ -76,7 +76,8 @@ function showSubmit() {
                 <div id="lengthHint" style="margin-bottom: 10px"></div>
                 <form id="checkAnswerForm" action="${puzzle}.html#">
                     <input type="text" placeholder="Enter answer here"/><br>
-                    <button type="submit">Submit</button>
+                    <button id="submit" type="submit">Submit</button>
+                    <button id="void">Void</button>
                 </form>
                 <div id="checkAnswerResult">
                 </div>
@@ -106,6 +107,8 @@ function render() {
             .addEventListener('click', renderOnSubmitOrVoided)
         document.querySelector('#checkAnswerForm')
             .addEventListener('submit', submitAnswer);
+        document.querySelector('#void')
+            .addEventListener('click', voidPuzzle);
         $('#checkAnswerModal')
             .on('shown.bs.modal', function () {
                 console.log("FOCUSING")
@@ -195,7 +198,7 @@ function loginCredentials(event) {
                 localStorage.setItem("token", data.token);
                 localStorage.setItem('groupName', teamName);
                 location.reload();
-                $('#loginForm button').prop('disabled', false);// modify this to local storage
+                $('#loginForm button').prop('disabled', false);
             }
         })
         .catch((err) => {
@@ -208,18 +211,47 @@ function loginCredentials(event) {
             $('#loginForm button').prop('disabled', false);
         })
 }
+
+function voidPuzzle(event) {
+    event.preventDefault();
+
+    let data = {
+        team: groupName(),
+        puzzle: $('#checkAnswerModal').attr('data-puzzle-id')
+    };
+
+    $('submit').prop('disabled', true)
+    // disable void button here thx (literally just copy code)
+
+    let option = {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authToken()}`,
+        }
+    }
+
+    fetch('https://nusmsl.com/api/puzzle/void', option)
+        .then((res)=>res.json())
+        .then((data)=>{
+            $('#checkAnswerResult')
+                .text(`You have voided this puzzle. The answer is \"${data.answer}\".`)
+        })
+}
+
 /// Submit event for check answer
-// Do answer check on front end and send puzzleName to /api/solve along with token.
 function submitAnswer(event) {
     event.preventDefault();
 
     let data = {
         puzzle: $('#checkAnswerModal').attr('data-puzzle-id'),
         answer: $('#checkAnswerForm input').val()
-    }
+    };
 
     resetModal();
-    $('#checkAnswerForm button').prop('disabled', true);
+    $('#submit').prop('disabled', true);
 
     let option = {
         method: 'POST',
@@ -242,7 +274,7 @@ function submitAnswer(event) {
                 $('#checkAnswerResult')
                     .text('Incorrect.')
                     .addClass('incorrect');
-                $('#checkAnswerForm button').prop('disabled', false);
+                $('#submit').prop('disabled', false);
             }
         }).catch((err) => {
             console.log(err)
