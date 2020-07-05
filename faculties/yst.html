@@ -61,7 +61,24 @@
         break-inside: avoid;
       }
     </style>
-
+    <script>
+        $(document).ready(
+            $(function(){
+                $("#town-image")
+                .mouseover(function(){
+                    $(this).fadeTo(150,0,function(){
+                        $(this).attr("src","../assets/images/faculties/yst_actual.png")
+                    }).fadeTo(150,1)
+                })
+                .mouseout(function(){
+                    $(this).fadeTo(150,0,function(){
+                        $(this).attr("src","../assets/images/faculties/yst.png")
+                    }).fadeTo(150,1)
+                })
+                
+            })
+        )
+    </script>
   </head>
 
   <body>
