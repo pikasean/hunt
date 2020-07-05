@@ -28,7 +28,7 @@ function renderTeamProgress() {
         }
     }
 
-    fetch('https://nusmsl.com/api/team', option)
+    fetch('https://nusmsl.com/api/solves', option)
         .then((res) => res.json())
         .then((data) => {
             const {progress} = data;
@@ -80,8 +80,6 @@ function showWelcome() {
     let welcomeDescription = group === null ? 'Welcome!' : `Welcome, ${group}!`;
     const htmlSubmit = `
         <div class="header-links">
-          <div id="check_answer" class="header-link"><a href="puzzle.html#" data-toggle="modal" id="checkAnswerButton"
-                                                    data-target="#checkAnswerModal">Submit Answer</a></div>
 <!--          <div id="submit" class="header-link"><a href="../solutions/puzzle.html">Solution</a></div>-->
                 <div class="header-link header-dropdown">
                     <div id="welcome" class="header-dropdown-title">
