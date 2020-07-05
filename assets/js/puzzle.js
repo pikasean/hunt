@@ -60,7 +60,12 @@ function showSubmit() {
           <div id="check_answer" class="header-link"><a href="${puzzle}.html#" data-toggle="modal" id="checkAnswerButton"
                                                     data-target="#checkAnswerModal">Submit Answer</a></div>
 <!--          <div id="submit" class="header-link"><a href="../solutions/${puzzle}.html">Solution</a></div>-->
-          <div id="welcome" class="header-link"><a href="../leaderboard.html" >${welcomeDescription}</a></div>
+          <div id="welcome" class="header-dropdown-title">${welcomeDescription}<span class="fas fa-caret-down"></span></div>
+            <div class="dropdown-content-wrapper">
+                <div class="dropdown-link" id="logout">
+                    Logout
+                </div>
+            </div>
           
 
           <div class="modal fade" id="checkAnswerModal" tabindex="-1" role="dialog" aria-labelledby="checkAnswerModalLabel"
@@ -109,6 +114,8 @@ function render() {
             .addEventListener('submit', submitAnswer);
         document.querySelector('#void')
             .addEventListener('click', voidPuzzle);
+        document.querySelector('#logout')
+            .addEventListener('click', logout);
         $('#checkAnswerModal')
             .on('shown.bs.modal', function () {
                 console.log("FOCUSING")
