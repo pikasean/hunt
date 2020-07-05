@@ -60,12 +60,13 @@ function showSubmit() {
           <div id="check_answer" class="header-link"><a href="${puzzle}.html#" data-toggle="modal" id="checkAnswerButton"
                                                     data-target="#checkAnswerModal">Submit Answer</a></div>
 <!--          <div id="submit" class="header-link"><a href="../solutions/${puzzle}.html">Solution</a></div>-->
-          <div id="welcome" class="header-dropdown-title"><a href="${puzzle}.html#">${welcomeDescription}<span class="fas fa-caret-down"></span></a></div>
-            <div class="dropdown-content-wrapper">
-                <div class="dropdown-link" id="logout">
-                    Logout
+                <div class="header-link header-dropdown">          
+                    <div id="welcome" class="header-dropdown-title"><a href="${puzzle}.html#">${welcomeDescription}<span class="fas fa-caret-down"></span></a></div>
+                        <div class="dropdown-content-wrapper">
+                            <div class="dropdown-link" id="logout">Logout</div>
+                        </div>
+                    </div>
                 </div>
-            </div>
           
 
           <div class="modal fade" id="checkAnswerModal" tabindex="-1" role="dialog" aria-labelledby="checkAnswerModalLabel"
@@ -241,11 +242,11 @@ function voidPuzzle(event) {
     }
 
     fetch('https://nusmsl.com/api/puzzle/void', option)
-        .then((res)=>res.json())
-        .then((data)=>{
+        .then((res) => res.json())
+        .then((data) => {
             $('#checkAnswerResult')
                 .text(`You have voided this puzzle. The answer is \"${data.answer}\".`)
-        }).catch((err)=>{
+        }).catch((err) => {
             console.log(err);
             $('#submit').prop('disabled', false)
             $('#void').prop('disabled', false)
