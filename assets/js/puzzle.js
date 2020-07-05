@@ -142,10 +142,6 @@ function render() {
 }
 
 function renderScore() {
-// <div id="score">
-//         <span style="font-family: BlackBeard, sans-serif; font-size: 28px">Score: </span>
-//     <span style="font-family: CrimsonText-Regular, serif; font-size: 27px">10pts</span>
-//     </div>
     let option = {
         method: 'GET',
         headers: {
@@ -368,6 +364,7 @@ function signUp(event) {
 
 document.onreadystatechange = function () {
     if (document.readyState === "interactive") {
+        renderScore();
         render(); // entry point
     }
 }
