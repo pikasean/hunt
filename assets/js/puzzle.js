@@ -176,7 +176,7 @@ function renderScore() {
         scoreValue.style.fontSize = '27px';
 
         scoreLabel.innerText = 'Score: ';
-        scoreValue.innerText = `${scoreNumber}pts`;
+        scoreValue.innerText = `${scoreNumber} pts`;
 
         score.appendChild(scoreLabel);
         score.appendChild(scoreValue);
