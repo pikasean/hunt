@@ -65,8 +65,7 @@ function renderTeamProgress() {
     fetch('https://nusmsl.com/api/team/hints', option)
         .then((res) => res.json())
         .then((data) => {
-            const { hints } = data;
-            displayNumHints(hints);
+            displayNumHints(data.num_hints);
         })
 }
 
