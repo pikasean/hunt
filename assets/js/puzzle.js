@@ -216,12 +216,16 @@ function renderOnSubmitOrVoided(event) {
             } else {
                 document.getElementById("lengthHint").innerHTML = printLengthHint(data.hint)
                 document.getElementById("numHints").innerHTML = `Your team has ${data.num_hints} hint(s) left.`
+
+                if (data.num_hints <= 0) {
+                    $('#hint').prop('disabled', true);
+                }
             }
         })
     fetch(`https://nusmsl.com/api/puzzle/hints/${puzzleId}`, option)
         .then((res) => res.json())
         .then((data) => {
-            if(data.hint){
+            if (data.hint) {
                 $('#hint').prop('disabled', true);
                 $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
                     .text(`${data.hint}`)
