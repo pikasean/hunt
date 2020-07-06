@@ -103,9 +103,15 @@ function showLoginList() {
                 </div>
                 <div class="modal-body">
                   <form id="loginForm" action="puzzle.html#">
-                    <input type="text" placeholder="Username"/><br>
-                    <input type="password" placeholder="Password"/><br>
+                  <div style="display:flex">
+                    <input type="text" placeholder="Team Name"/>
+                    </div>
+                    <div style="display:flex">
+                    <input type="password" placeholder="Password"/>
+                    </div>
+                    <div id="resp-buttons">
                     <button type="submit">Login</button>
+                    </div>
                   </form>
                   <div id="loginResult">
                   </div>
@@ -122,7 +128,7 @@ function showLoginList() {
 /// HTML for check answer
 function showWelcome() {
     let group = groupName();
-    let welcomeDescription = group === null ? 'Welcome!' : `Welcome, ${group}!`;
+    let welcomeDescription = group === null ? 'Welcome!' : `Welcome, ${group}! `;
     const htmlSubmit = `
         <div class="header-links">
 <!--          <div id="submit" class="header-link"><a href="../solutions/puzzle.html">Solution</a></div>-->

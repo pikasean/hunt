@@ -34,9 +34,15 @@ function showLogin() {
                 </div>
                 <div class="modal-body">
                   <form id="loginForm" action="${puzzle}.html#">
-                    <input type="text" placeholder="Username"/><br>
-                    <input type="password" placeholder="Password"/><br>
+                  <div style="display:flex">
+                    <input type="text" placeholder="Team Name"/>
+                    </div>
+                    <div style="display:flex">
+                    <input type="password" placeholder="Password"/>
+                    </div>
+                    <div id="resp-buttons">
                     <button type="submit">Login</button>
+                    </div>
                   </form>
                   <div id="loginResult">
                   </div>
@@ -325,6 +331,7 @@ function voidPuzzle(event) {
     fetch('https://nusmsl.com/api/puzzle/void', option)
         .then((res) => res.json())
         .then((data) => {
+            $('#checkAnswerResult').removeClass('correct').removeClass('incorrect');
             $('#checkAnswerResult')
                 .text(`You have voided this puzzle. The answer is \"${data.answer}\".`)
         }).catch((err) => {
