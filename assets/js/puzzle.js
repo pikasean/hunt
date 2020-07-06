@@ -80,6 +80,7 @@ function showSubmit() {
                   <span class="modal-title" id="checkAnswerModalLabel">Submit Answer</span>
                 </div>
                 <div class="modal-body" id="dialog_content">
+                <div id="numHints" style="margin-bottom: 10px"></div>
                 <div id="lengthHint" style="margin-bottom: 10px"></div>
                 <form id="checkAnswerForm" action="${puzzle}.html#">
                     <div style="display:flex">
@@ -204,6 +205,15 @@ function renderOnSubmitOrVoided(event) {
                     `Your team has voided this puzzle. The answer is \"${data.answer}\".`
             } else {
                 document.getElementById("lengthHint").innerHTML = printLengthHint(data.hint)
+                document.getElementById("numHints").innerHTML = `Your team has ${data.num_hints} hint(s) left.`
+            }
+        })
+    fetch(`https://nusmsl.com/api/puzzle/hints/${puzzleId}`, option)
+        .then((res) => res.json())
+        .then((data) => {
+            if(data.hint){
+                $('checkAnswerResult').removeClass('correct').removeClass('incorrect')
+                    .text(`${data.hint}`)
             }
         })
 }
@@ -258,6 +268,36 @@ function loginCredentials(event) {
                 : loginResult.textContent = 'Login failed.';
             loginResult.classList.add('incorrect');
             $('#loginForm button').prop('disabled', false);
+        })
+}
+
+function renderHint(event) {
+    event.preventDefault();
+
+    let data = {
+        puzzle: $('#checkAnswerModal').attr('data-puzzle-id')
+    }
+
+    let option = {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authToken()}`,
+        }
+    }
+
+    $('#hint').prop('disabled', true)
+    fetch('https://nusmsl.com/api/puzzle/hints', option)
+        .then((res) => res.json())
+        .then((data) => {
+            $('#numHints').text(`Your team has ${data.num_hints} hint(s) left.`);
+            $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
+                .text(`${data.hint}`);
+        }).catch((error) => {
+            console.log(error);
+            $('#hint').prop('disabled', false);
         })
 }
 
