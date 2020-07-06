@@ -122,11 +122,11 @@
     display: flex
 }*/
 
-#loginModal #loginForm {
+/*#loginModal #loginForm {
     display: -webkit-box;
     display: -ms-flexbox;
     flex-wrap: wrap;
-}
+}*/
 
 #loginModal #loginForm input {
     -webkit-box-flex: 1;
@@ -139,12 +139,17 @@
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    margin-right: 0px
+    margin-right: 0px;
+    margin-bottom: 8px
 }
 
 #resp-buttons{
     display: flex;
     justify-content: center;
+}
+
+#resp-buttons button{
+    border-radius: 5px
 }
 
 button#submit{
