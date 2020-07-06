@@ -218,6 +218,7 @@ function renderOnSubmitOrVoided(event) {
         .then((res) => res.json())
         .then((data) => {
             if(data.hint){
+                $('#hint').prop('disabled', true);
                 $('checkAnswerResult').removeClass('correct').removeClass('incorrect')
                     .text(`${data.hint}`)
             }
