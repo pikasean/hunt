@@ -35,7 +35,9 @@ function showLogin() {
                 <div class="modal-body">
                   <form id="loginForm" action="${puzzle}.html#">
                   <div style="display:flex">
-                    <input type="text" placeholder="Team Name"/><br>
+                    <input type="text" placeholder="Team Name"/>
+                    </div>
+                    <div style="display:flex">
                     <input type="password" placeholder="Password"/>
                     </div>
                     <div id="resp-buttons">
