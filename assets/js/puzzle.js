@@ -90,7 +90,7 @@ function showSubmit() {
                 <div id="lengthHint" style="margin-bottom: 10px"></div>
                 <form id="checkAnswerForm" action="${puzzle}.html#">
                     <div style="display:flex">
-                    <input type="text" placeholder="Enter answer here"/>
+                    <input id="response" type="text" placeholder="Enter answer here"/>
                     </div>
                     <div id="resp-buttons">
                     <button id="submit" type="submit">Submit</button>
@@ -358,7 +358,9 @@ function submitAnswer(event) {
     };
 
     resetModal();
-    $('#checkAnswerForm :input').prop('disabled', true);
+    $('response').prop('disable', true)
+    $('submit').prop('disable', true)
+    $('void').prop('disable', true)
 
     let option = {
         method: 'POST',
@@ -381,7 +383,9 @@ function submitAnswer(event) {
                 $('#checkAnswerResult')
                     .text('Incorrect.')
                     .addClass('incorrect');
-                $('#checkAnswerForm :input').prop('disabled', false);
+                    $('response').prop('disable', false)
+                    $('submit').prop('disable', false)
+                    $('void').prop('disable', false)
             }
         }).catch((err) => {
             console.log(err)
