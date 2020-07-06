@@ -128,6 +128,8 @@ function render() {
             .addEventListener('submit', submitAnswer);
         document.querySelector('#void')
             .addEventListener('click', voidPuzzle);
+        document.querySelector('#hint')
+            .addEventListener('click', renderHint);
         document.querySelector('#logout')
             .addEventListener('click', logout);
         $('#checkAnswerModal')
