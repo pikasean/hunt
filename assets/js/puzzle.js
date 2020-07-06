@@ -54,7 +54,7 @@ function showLogin() {
 function showSubmit() {
     let puzzle = puzzleName();
     let group = groupName();
-    let welcomeDescription = group === null ? 'Welcome!' : `Welcome, ${group}!`;
+    let welcomeDescription = group === null ? 'Welcome!' : `Welcome, ${group}! `;
     const htmlSubmit = `
         <div class="header-links">
           <div id="check_answer" class="header-link"><a href="${puzzle}.html#" data-toggle="modal" id="checkAnswerButton"
@@ -82,9 +82,14 @@ function showSubmit() {
                 <div class="modal-body" id="dialog_content">
                 <div id="lengthHint" style="margin-bottom: 10px"></div>
                 <form id="checkAnswerForm" action="${puzzle}.html#">
-                    <input type="text" placeholder="Enter answer here"/><br>
+                    <div style="display:flex">
+                    <input type="text" placeholder="Enter answer here"/>
+                    </div>
+                    <div id="resp-buttons">
                     <button id="submit" type="submit">Submit</button>
-                    <button id="void">Void</button>
+                    <button id="void">Void Puzzle</button>
+                    <button id="hint">Request Hint</button>
+                    </div>
                 </form>
                 <div id="checkAnswerResult">
                 </div>

@@ -6,20 +6,6 @@
 }
 
 @font-face{
-    font-family: MetallophileSp8-Medium;
-    font-style: normal;
-    font-weight: normal;
-    src: url(./../fonts/Metallophile%20Sp8%20Medium.woff)
-}
-
-@font-face{
-    font-family: ValeriaBoldGrunge;
-    font-style: normal;
-    font-weight: normal;
-    src: url(./../fonts/ValeriaBoldGrunge.woff)
-}
-
-@font-face{
     font-family: CrimsonText-Regular;
     font-style: normal;
     font-weight: normal;
@@ -130,11 +116,11 @@
     color: #000
 }
 
-#checkAnswerModal #checkAnswerForm {
+/*#checkAnswerModal #checkAnswerForm {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex
-}
+}*/
 
 #loginModal #loginForm {
     display: -webkit-box;
@@ -145,7 +131,7 @@
 #loginModal #loginForm input {
     -webkit-box-flex: 1;
     -ms-flex: 1;
-    margin-right: 8px;
+    margin-right: 0px;
     margin-bottom: 8px;
 }
 
@@ -153,13 +139,31 @@
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    margin-right: 8px
+    margin-right: 0px
+}
+
+#resp-buttons{
+    display: flex;
+    justify-content: center;
+}
+
+button#submit{
+    background-color: #77dd77;
+}
+button#void{
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #ff6961;
+}
+
+button#hint{
+    background-color: #ffb347;
 }
 
 #checkAnswerModal #checkAnswerForm button, #checkAnswerModal #checkAnswerForm input,
 #loginModal #loginForm button, #loginModal #loginForm input {
     font-size: 24px;
-    font-family: Century Supra,serif
+    font-family: CrimsonText-Regular,serif
 }
 
 #checkAnswerModal #checkAnswerResult, #loginModal #loginResult {
