@@ -5,19 +5,7 @@
     src: url(./../fonts/BlackBeard.woff)
 }
 
-@font-face{
-    font-family: MetallophileSp8-Medium;
-    font-style: normal;
-    font-weight: normal;
-    src: url(./../fonts/Metallophile%20Sp8%20Medium.woff)
-}
 
-@font-face{
-    font-family: ValeriaBoldGrunge;
-    font-style: normal;
-    font-weight: normal;
-    src: url(./../fonts/ValeriaBoldGrunge.woff)
-}
 
 /*body {
     background-color: #d3d3d3
