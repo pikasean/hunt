@@ -88,12 +88,12 @@ function showLoginList() {
     const htmlLogin = `
         <div class="header-links">
           <div id="login" class="header-link">
-            <a href="puzzle.html#" data-toggle="modal" data-target="#loginModal">Login</a>
+            <a href="${puzzle}.html#" data-toggle="modal" data-target="#loginModal">Login</a>
           </div>
 
 
           <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
-               data-puzzle-id="puzzle">
+               data-puzzle-id="${puzzle}">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -102,10 +102,14 @@ function showLoginList() {
                   <span class="modal-title" id="loginModalLabel">Enter your team name and password</span>
                 </div>
                 <div class="modal-body">
-                  <form id="loginForm" action="puzzle.html#">
-                    <input type="text" placeholder="Username"/><br>
-                    <input type="password" placeholder="Password"/><br>
+                  <form id="loginForm" action="${puzzle}.html#">
+                  <div style="display:flex">
+                    <input type="text" placeholder="Team Name"/><br>
+                    <input type="password" placeholder="Password"/>
+                    </div>
+                    <div id="resp-buttons">
                     <button type="submit">Login</button>
+                    </div>
                   </form>
                   <div id="loginResult">
                   </div>
@@ -122,7 +126,7 @@ function showLoginList() {
 /// HTML for check answer
 function showWelcome() {
     let group = groupName();
-    let welcomeDescription = group === null ? 'Welcome!' : `Welcome, ${group}!`;
+    let welcomeDescription = group === null ? 'Welcome!' : `Welcome, ${group}! `;
     const htmlSubmit = `
         <div class="header-links">
 <!--          <div id="submit" class="header-link"><a href="../solutions/puzzle.html">Solution</a></div>-->
