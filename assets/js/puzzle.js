@@ -206,9 +206,11 @@ function renderOnSubmitOrVoided(event) {
         .then((res) => res.json())
         .then((data) => {
             if (data.solve) {
+                $('#checkAnswerForm :input').prop('disabled', true)
                 document.getElementById("dialog_content").innerHTML =
                     `Your team has solved this puzzle. The answer is \"${data.answer}\".`
             } else if (data.void) {
+                $('#checkAnswerForm :input').prop('disabled', true)
                 document.getElementById("dialog_content").innerHTML =
                     `Your team has voided this puzzle. The answer is \"${data.answer}\".`
             } else {
@@ -318,8 +320,7 @@ function voidPuzzle(event) {
         puzzle: $('#checkAnswerModal').attr('data-puzzle-id')
     };
 
-    $('#submit').prop('disabled', true)
-    $('#void').prop('disabled', true)
+    $('#checkAnswerForm :input').prop('disabled', true);
 
     let option = {
         method: 'POST',
@@ -339,8 +340,7 @@ function voidPuzzle(event) {
                 .text(`You have voided this puzzle. The answer is \"${data.answer}\".`)
         }).catch((err) => {
             console.log(err);
-            $('#submit').prop('disabled', false)
-            $('#void').prop('disabled', false)
+            $('#checkAnswerForm :input').prop('disabled', false);
         });
 }
 
@@ -354,7 +354,7 @@ function submitAnswer(event) {
     };
 
     resetModal();
-    $('#submit').prop('disabled', true);
+    $('#checkAnswerForm :input').prop('disabled', true);
 
     let option = {
         method: 'POST',
@@ -377,7 +377,7 @@ function submitAnswer(event) {
                 $('#checkAnswerResult')
                     .text('Incorrect.')
                     .addClass('incorrect');
-                $('#submit').prop('disabled', false);
+                $('#checkAnswerForm :input').prop('disabled', false);
             }
         }).catch((err) => {
             console.log(err)
