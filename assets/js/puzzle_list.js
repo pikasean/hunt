@@ -39,20 +39,35 @@ function renderTeamProgress() {
         const teamScore = document.getElementById('team_score');
         const scoreText = teamScore.lastElementChild;
         teamScore.hidden = false;
-        scoreText.style.fontSize= '28px';
+        scoreText.style.fontSize = '28px';
         scoreText.innerText = `${score}pts`;
+    }
+
+    function displayNumHints(hints) {
+        const teamHints = document.getElementById('team_hint');
+        const hintText = teamHints.lastElementChild;
+        teamHints.hidden = false;
+        hintText.style.fontSize = '28px';
+        hintText.innerText = `${hints}`;
     }
 
     fetch('https://nusmsl.com/api/solves', option)
         .then((res) => res.json())
         .then((data) => {
-            const {progress, score} = data;
+            const { progress, score } = data;
 
             displayTeamScore(score);
-            for (const {puzzle_id, state} of progress) {
+            for (const { puzzle_id, state } of progress) {
                 displayPuzzleSolvedOrVoided(puzzle_id, state);
             }
         });
+
+    fetch('https://nusmsl.com/api/team/hints', option)
+        .then((res) => res.json())
+        .then((data) => {
+            const { hints } = data;
+            displayNumHints(hints);
+        })
 }
 
 function renderScoreWeightage() {
@@ -77,7 +92,7 @@ function renderScoreWeightage() {
     fetch('https://nusmsl.com/api/puzzle', option)
         .then((res) => res.json())
         .then((data) => {
-            for (const {puzzle_id, score} of data) {
+            for (const { puzzle_id, score } of data) {
                 displayPuzzleScore(puzzle_id, score);
             }
         });
