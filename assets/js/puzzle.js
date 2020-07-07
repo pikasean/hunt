@@ -306,7 +306,6 @@ function renderHint(event) {
     fetch('https://nusmsl.com/api/puzzle/hints', option)
         .then((res) => res.json())
         .then((data) => {
-            console.log(data);
             if (data.hint) {
                 $('#numHints').text(`Your team has ${data.num_hints} hint credit(s) left.`);
                 $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
