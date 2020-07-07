@@ -392,7 +392,7 @@ function submitAnswer(event) {
                     .addClass('correct');
             } else if (data.message) {
                 $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
-                    .addText(`${data.message}`);
+                    .text(`${data.message}`);
                 $('hint').prop('disable', true);
             } else {
                 $('#checkAnswerResult')
