@@ -311,6 +311,7 @@ function renderHint(event) {
                 $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
                     .text(`${data.hint}`);
             } else if (data.message) {
+                console.log(data.message);
                 $('#checkAnswerResult').addClass('incorrect').text(`${data.message}`);
             }
         }).catch((error) => {
