@@ -215,7 +215,7 @@ function renderOnSubmitOrVoided(event) {
                     `Your team has voided this puzzle. The answer is \"${data.answer}\".`
             } else {
                 document.getElementById("lengthHint").innerHTML = printLengthHint(data.hint)
-                document.getElementById("numHints").innerHTML = `Your team has ${data.num_hints} hint(s) left.`
+                document.getElementById("numHints").innerHTML = `Your team has ${data.num_hints} hint credit(s) left.`
 
                 if (data.num_hints <= 0) {
                     $('#hint').prop('disabled', true);
