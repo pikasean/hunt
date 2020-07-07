@@ -307,9 +307,14 @@ function renderHint(event) {
     fetch('https://nusmsl.com/api/puzzle/hints', option)
         .then((res) => res.json())
         .then((data) => {
-            $('#numHints').text(`Your team has ${data.num_hints} hint(s) left.`);
-            $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
-                .text(`${data.hint}`);
+            if (data.hint) {
+                $('#numHints').text(`Your team has ${data.num_hints} hint(s) left.`);
+                $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
+                    .text(`${data.hint}`);
+            } else if (data.message) {
+                $('#checkAnswerResult').addClass('incorrect')
+                    .text(`${data.message}`);
+            }
         }).catch((error) => {
             console.log(error);
             $('#hint').prop('disabled', false);
@@ -383,9 +388,9 @@ function submitAnswer(event) {
                 $('#checkAnswerResult')
                     .text('Incorrect.')
                     .addClass('incorrect');
-                    $('response').prop('disable', false)
-                    $('submit').prop('disable', false)
-                    $('void').prop('disable', false)
+                $('response').prop('disable', false)
+                $('submit').prop('disable', false)
+                $('void').prop('disable', false)
             }
         }).catch((err) => {
             console.log(err)
