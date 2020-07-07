@@ -345,7 +345,7 @@ function voidPuzzle(event) {
             if (data.answer) {
                 $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
                     .text(`Your team has voided this puzzle. The answer is \"${data.answer}\".`);
-            }else if(data.state){
+            } else if (data.state) {
                 $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
                     .text(`${data.state}`);
             } else if (data.message) {
@@ -401,7 +401,7 @@ function submitAnswer(event) {
             } else if (data.state) {
                 $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
                     .text(`${data.state}`);
-                $('hint').prop('disabled', true);// disable everything, the case when the puzzle is solved or voided
+                $('#hint').prop('disabled', true);// disable everything, the case when the puzzle is solved or voided
             } else if (data.message) {
                 $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
                     .text(`${data.message}`);
