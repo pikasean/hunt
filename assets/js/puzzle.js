@@ -307,9 +307,16 @@ function renderHint(event) {
     fetch('https://nusmsl.com/api/puzzle/hints', option)
         .then((res) => res.json())
         .then((data) => {
-            $('#numHints').text(`Your team has ${data.num_hints} hint(s) left.`);
-            $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
-                .text(`${data.hint}`);
+            if (data.hint) {
+                $('#numHints').text(`Your team has ${data.num_hints} hint(s) left.`);
+                $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
+                    .text(`${data.hint}`);
+            } else if (data.used) {
+                $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
+                    .text(`${data.hint}`);
+            } else if (data.message) {
+                $('#checkAnswerResult').addClass('incorrect').text(`${data.message}`);
+            }
         }).catch((error) => {
             console.log(error);
             $('#hint').prop('disabled', false);
@@ -339,9 +346,13 @@ function voidPuzzle(event) {
     fetch('https://nusmsl.com/api/puzzle/void', option)
         .then((res) => res.json())
         .then((data) => {
-            $('#checkAnswerResult').removeClass('correct').removeClass('incorrect');
-            $('#checkAnswerResult')
-                .text(`You have voided this puzzle. The answer is \"${data.answer}\".`)
+            if (data.answer) {
+                $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
+                    .text(`You have voided this puzzle. The answer is \"${data.answer}\".`);
+            } else if (data.message) {
+                $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
+                    .text(`${data.message}`);
+            }
         }).catch((err) => {
             console.log(err);
             $('#checkAnswerForm :input').prop('disabled', false);
@@ -358,9 +369,9 @@ function submitAnswer(event) {
     };
 
     resetModal();
-    $('response').prop('disable', true)
-    $('submit').prop('disable', true)
-    $('void').prop('disable', true)
+    $('#response').prop('disabled', true)
+    $('#submit').prop('disabled', true)
+    $('#void').prop('disabled', true)
 
     let option = {
         method: 'POST',
@@ -379,13 +390,18 @@ function submitAnswer(event) {
                 $('#checkAnswerResult')
                     .text('Correct!')
                     .addClass('correct');
+                $('#checkAnswerForm :input').prop('disabled', true)
+            } else if (data.message) {
+                $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
+                    .text(`${data.message}`);
+                $('hint').prop('disable', true);
             } else {
                 $('#checkAnswerResult')
                     .text('Incorrect.')
                     .addClass('incorrect');
-                    $('response').prop('disable', false)
-                    $('submit').prop('disable', false)
-                    $('void').prop('disable', false)
+                $('#response').prop('disabled', false)
+                $('#submit').prop('disabled', false)
+                $('#void').prop('disabled', false)
             }
         }).catch((err) => {
             console.log(err)
