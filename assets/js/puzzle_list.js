@@ -40,7 +40,7 @@ function renderTeamProgress() {
         const scoreText = teamScore.lastElementChild;
         teamScore.hidden = false;
         scoreText.style.fontSize = '28px';
-        scoreText.innerText = `${score}pts`;
+        scoreText.innerText = `${score} pts`;
     }
 
     function displayNumHints(hints) {
@@ -82,7 +82,7 @@ function renderScoreWeightage() {
     function displayPuzzleScore(puzzle_id, score) {
         const puzzle = document.getElementById(puzzle_id);
         const span = document.createElement('span');
-        span.innerText = ` [${score}pts]`;
+        span.innerText = ` [${score} pts]`;
         span.style.fontFamily = 'monospace';
         span.style.fontSize = 'large';
         puzzle.firstElementChild.insertAdjacentElement('afterend', span);
