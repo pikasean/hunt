@@ -311,9 +311,11 @@ function renderHint(event) {
                 $('#numHints').text(`Your team has ${data.num_hints} hint(s) left.`);
                 $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
                     .text(`${data.hint}`);
+            } else if (data.used) {
+                $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
+                    .text(`${data.hint}`);
             } else if (data.message) {
-                $('#checkAnswerResult').addClass('incorrect')
-                    .text(`${data.message}`);
+                $('#checkAnswerResult').addClass('incorrect').text(`${data.message}`);
             }
         }).catch((error) => {
             console.log(error);
@@ -344,9 +346,13 @@ function voidPuzzle(event) {
     fetch('https://nusmsl.com/api/puzzle/void', option)
         .then((res) => res.json())
         .then((data) => {
-            $('#checkAnswerResult').removeClass('correct').removeClass('incorrect');
-            $('#checkAnswerResult')
-                .text(`You have voided this puzzle. The answer is \"${data.answer}\".`)
+            if (data.answer) {
+                $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
+                    .text(`You have voided this puzzle. The answer is \"${data.answer}\".`);
+            } else if (data.message) {
+                $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
+                    .text(`${data.message}`);
+            }
         }).catch((err) => {
             console.log(err);
             $('#checkAnswerForm :input').prop('disabled', false);
@@ -384,6 +390,10 @@ function submitAnswer(event) {
                 $('#checkAnswerResult')
                     .text('Correct!')
                     .addClass('correct');
+            } else if (data.message) {
+                $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
+                    .addText(`${data.message}`);
+                $('hint').prop('disable', true);
             } else {
                 $('#checkAnswerResult')
                     .text('Incorrect.')
