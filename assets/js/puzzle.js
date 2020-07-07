@@ -308,7 +308,7 @@ function renderHint(event) {
         .then((res) => res.json())
         .then((data) => {
             if (data.hint) {
-                $('#numHints').text(`Your team has ${data.num_hints} hint(s) left.`);
+                $('#numHints').text(`Your team has ${data.num_hints} hint credit(s) left.`);
                 $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
                     .text(`${data.hint}`);
             } else if (data.used) {
