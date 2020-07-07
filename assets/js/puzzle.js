@@ -272,7 +272,6 @@ function loginCredentials(event) {
                 localStorage.setItem("token", data.token);
                 localStorage.setItem('groupName', teamName);
                 location.reload();
-                $('#loginForm button').prop('disabled', false);
             }
         })
         .catch((err) => {
@@ -309,9 +308,6 @@ function renderHint(event) {
         .then((data) => {
             if (data.hint) {
                 $('#numHints').text(`Your team has ${data.num_hints} hint credit(s) left.`);
-                $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
-                    .text(`${data.hint}`);
-            } else if (data.used) {
                 $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
                     .text(`${data.hint}`);
             } else if (data.message) {
