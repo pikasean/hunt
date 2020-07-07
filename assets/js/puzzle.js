@@ -369,9 +369,9 @@ function submitAnswer(event) {
     };
 
     resetModal();
-    $('response').prop('disable', true)
-    $('submit').prop('disable', true)
-    $('void').prop('disable', true)
+    $('response').prop('disabled', true)
+    $('submit').prop('disabled', true)
+    $('void').prop('disabled', true)
 
     let option = {
         method: 'POST',
@@ -390,6 +390,7 @@ function submitAnswer(event) {
                 $('#checkAnswerResult')
                     .text('Correct!')
                     .addClass('correct');
+                $('#checkAnswerForm :input').prop('disabled', true)
             } else if (data.message) {
                 $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
                     .text(`${data.message}`);
@@ -398,9 +399,9 @@ function submitAnswer(event) {
                 $('#checkAnswerResult')
                     .text('Incorrect.')
                     .addClass('incorrect');
-                $('response').prop('disable', false)
-                $('submit').prop('disable', false)
-                $('void').prop('disable', false)
+                $('response').prop('disabled', false)
+                $('submit').prop('disabled', false)
+                $('void').prop('disabled', false)
             }
         }).catch((err) => {
             console.log(err)
