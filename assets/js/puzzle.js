@@ -386,19 +386,25 @@ function submitAnswer(event) {
     fetch('https://nusmsl.com/api/solves', option)
         .then((res) => res.json())
         .then((data) => {
-            if (data.solve) {
+            if (data.solve === true) {
                 $('#checkAnswerResult')
                     .text('Correct!')
                     .addClass('correct');
                 $('#checkAnswerForm :input').prop('disabled', true)
-            } else if (data.message) {
-                $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
-                    .text(`${data.message}`);
-                $('hint').prop('disable', true);
-            } else {
+            } else if (data.solve === false) {
                 $('#checkAnswerResult')
                     .text('Incorrect.')
                     .addClass('incorrect');
+                $('#response').prop('disabled', false)
+                $('#submit').prop('disabled', false)
+                $('#void').prop('disabled', false)
+            } else if (data.state) {
+                $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
+                    .text(`${data.state}`);
+                $('hint').prop('disabled', true);// disable everything, the case when the puzzle is solved or voided
+            } else if (data.message) {
+                $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
+                    .text(`${data.message}`);
                 $('#response').prop('disabled', false)
                 $('#submit').prop('disabled', false)
                 $('#void').prop('disabled', false)
