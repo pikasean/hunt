@@ -344,10 +344,14 @@ function voidPuzzle(event) {
         .then((data) => {
             if (data.answer) {
                 $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
-                    .text(`You have voided this puzzle. The answer is \"${data.answer}\".`);
+                    .text(`Your team has voided this puzzle. The answer is \"${data.answer}\".`);
+            }else if(data.state){
+                $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
+                    .text(`${data.state}`);
             } else if (data.message) {
                 $('#checkAnswerResult').removeClass('correct').removeClass('incorrect')
                     .text(`${data.message}`);
+                $('#checkAnswerForm :input').prop('disabled', false); // error dy gg
             }
         }).catch((err) => {
             console.log(err);
